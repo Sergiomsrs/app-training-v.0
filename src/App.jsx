@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import WodCard from './WodCard';
 
 function App() {
 
-  const [final, setFinal] = useState({})
+  const [selector, setSelector] = useState(1)
+  const [selectorClassCrear, setSelectorClassCrear] = useState('white')
+  const [selectorClassRevisar, setSelectorClassRevisar] = useState('blue')
+  
+
   const [sesion, setSesion] = useState({
-    sesionDia:'',
+    dia:'',
     tituloP1:'', 
     p1:'',
     tituloP2:'', 
@@ -15,6 +20,22 @@ function App() {
     tituloP4:'', 
     p4:'',
   });
+
+  const stateCrear = () =>{
+
+    setSelector(1)
+    setSelectorClassCrear('white')
+    setSelectorClassRevisar('blue')
+
+    
+
+  }
+
+  const stateRevisar = () => {
+    setSelector(2)
+    setSelectorClassCrear('blue')
+    setSelectorClassRevisar('white')
+  }
 
 
 const onImputChange = (e) =>{
@@ -27,17 +48,38 @@ const onImputChange = (e) =>{
     })
 }
 
-const handleClick = ()=>{
+
+
+const json = {
+  dia: sesion.dia,
+  parte1:{
+    t1: sesion.tituloP1,
+    p1: sesion.p1 
+  },
+  parte2:{
+    t2: sesion.tituloP2,
+    p2: sesion.p2 
+  },
+  parte3:{
+    t3: sesion.tituloP3,
+    p3: sesion.p3 
+  },
+  parte4:{
+    t4: sesion.tituloP4,
+    p4: sesion.p4 
+  }
 
 }
+
+const jsonParse = JSON.stringify(json)
 
 
 function enviarDatos() {
   const data = {
-    parte1: `${sesion.tituloP1}\n${sesion.p1}`,
-    parte2: `${sesion.tituloP2}\n${sesion.p2}`,
-    parte3: `${sesion.tituloP3}\n${sesion.p3}`,
-    parte4: `${sesion.tituloP4}\n${sesion.p4}`,
+    parte1: '',
+    parte2:'',
+    parte3:'',
+    parte4: jsonParse,
   };
 
   
@@ -72,8 +114,8 @@ function enviarDatos() {
           <h2>Diseña aqui tus entrenamientos</h2>
         </div>
         <div className="selectores">
-          <div className="selector" onClick={enviarDatos}>Crear</div>
-          <div className="selector">Revisar</div>
+          <div className={`selector selector-${selectorClassCrear}`} onClick={stateCrear}>Crear</div>
+          <div className={`selector selector-${selectorClassRevisar}`} onClick={stateRevisar}>Revisar</div>
           <div className="selector">Diario</div>
         </div>
       </div>
@@ -81,31 +123,38 @@ function enviarDatos() {
       <div className="contenerdor-componente">
         <div className="componente">
 
-        <form  name='dia' className='formulario'>
-          <input type="text" name="dia" id="dia" placeholder='Sesion-Dia'  onChange={onImputChange}/>
+          {selector ==1 ? 
+          <form  name='dia' className='formulario'>
+          <input  className= "card" type="text" name="dia" id="dia" placeholder='Sesion-Dia'  onChange={onImputChange}/>
 
           <div name='parte1'>
-            <input type="text" name="tituloP1" id="tituloP1" placeholder='Titulo-p1' onChange={onImputChange}/>
-            <textarea name="p1" id="" cols="30" rows="10" placeholder='p1' onChange={onImputChange}></textarea>
+            <input className= "card" type="text" name="tituloP1" id="tituloP1" placeholder='Titulo-p1' onChange={onImputChange}/>
+            <textarea className= "card" name="p1" id="" cols="30" rows="10" placeholder='p1' onChange={onImputChange}></textarea>
           </div>
 
           <div name='parte2'>
-            <input type="text" name="tituloP2" id="tituloP2" placeholder='Titulo-p2'onChange={onImputChange}/>
-            <textarea name="p2" id="" cols="30" rows="10" placeholder='p2'onChange={onImputChange}></textarea>
+            <input className= "card" type="text" name="tituloP2" id="tituloP2" placeholder='Titulo-p2'onChange={onImputChange}/>
+            <textarea className= "card" name="p2" id="" cols="30" rows="10" placeholder='p2'onChange={onImputChange}></textarea>
           </div>
 
           <div name='parte3'>
-            <input type="text" name="tituloP3" id="tituloP3" placeholder='Titulo-p3' onChange={onImputChange}/>
-            <textarea name="p3" id="" cols="30" rows="10" placeholder='p3'onChange={onImputChange}></textarea>
+            <input className= "card" type="text" name="tituloP3" id="tituloP3" placeholder='Titulo-p3' onChange={onImputChange}/>
+            <textarea className= "card" name="p3" id="" cols="30" rows="10" placeholder='p3'onChange={onImputChange}></textarea>
           </div>
 
           <div name='parte4'>
-            <input type="text" name="tituloP4" id="tituloP4" placeholder='Titulo-p4' onChange={onImputChange}/>
-            <textarea name="p4" id="" cols="30" rows="10" placeholder='p4' onChange={onImputChange}></textarea>
+            <input className= "card" type="text" name="tituloP4" id="tituloP4" placeholder='Titulo-p4' onChange={onImputChange}/>
+            <textarea className= "card" name="p4" id="" cols="30" rows="10" placeholder='p4' onChange={onImputChange}></textarea>
           </div>
 
-          <button onClick={handleClick}>Enviar</button>
+          <button onClick={enviarDatos}>Enviar</button>
         </form>
+            
+           : <WodCard/>}
+
+        
+
+        
 
 
         </div>

@@ -6,9 +6,6 @@
 }
 
 .contenedor-cabecera {
-
-  border-style: solid;
-  border-color: green;
   color: white;
   display: flex;
   flex-direction: column;
@@ -28,14 +25,20 @@
   background-color: blue;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
   width: 75%;
 }
 
 .selector{
-
   cursor: pointer;
-  margin: 0.5rem;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  font-style: bold;
+}
+
+.selector-white{
+  background-color: white;
+  color: blue;
   display: flex;
   justify-content: center;
   font-style: bold;
@@ -43,8 +46,6 @@
 
 .contenerdor-componente {
 
-  border-style: solid;
-  border-color: green;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,3 +72,8 @@ input{
 button{
   cursor: pointer;
 }
+
+
+
+
+

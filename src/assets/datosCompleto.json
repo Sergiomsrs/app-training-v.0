@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "parte1": "Lunes",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 2,
+        "parte1": "Martes",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 3,
+        "parte1": "Miercoles",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 4,
+        "parte1": "Jueves",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 5,
+        "parte1": "Viernes",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 6,
+        "parte1": "Sabado",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    },
+    {
+        "id": 7,
+        "parte1": "Domingo",
+        "parte2": "Warm Up\nejemplo",
+        "parte3": "Wod\nejemplo",
+        "parte4": "CalmDown\nejemplo"
+    }
+]
