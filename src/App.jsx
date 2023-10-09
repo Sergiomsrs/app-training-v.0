@@ -3,28 +3,18 @@ import './App.css'
 
 function App() {
 
-  const [sesion, setSesion] = useState([
-    {
-     sesionDia:''
-    },
-    {
-      tituloP1:'',
-      p1:''
-    },
-    {
-      tituloP2:'',
-      p2:''
-    },
-    {
-      tituloP3:'',
-      p3:''
-    },
-    {
-      tituloP4:'',
-      p4:''
-    }
-  ]);
-
+  const [final, setFinal] = useState({})
+  const [sesion, setSesion] = useState({
+    sesionDia:'',
+    tituloP1:'', 
+    p1:'',
+    tituloP2:'', 
+    p2:'',
+    tituloP3:'', 
+    p3:'',
+    tituloP4:'', 
+    p4:'',
+  });
 
 
 const onImputChange = (e) =>{
@@ -37,12 +27,38 @@ const onImputChange = (e) =>{
     })
 }
 
-const handleClick = (e) =>{
-  e.preventDefault();
+const handleClick = ()=>{
+
+}
+
+
+function enviarDatos() {
+  const data = {
+    parte1: `${sesion.tituloP1}\n${sesion.p1}`,
+    parte2: `${sesion.tituloP2}\n${sesion.p2}`,
+    parte3: `${sesion.tituloP3}\n${sesion.p3}`,
+    parte4: `${sesion.tituloP4}\n${sesion.p4}`,
+  };
+
   
-  const sesionJson = JSON.stringify(sesion);
-  setSesion(sesionJson)
+
+
   
+
+  fetch('http://localhost:8080/api/entrenamiento/guardar', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 }
 
 
@@ -56,7 +72,7 @@ const handleClick = (e) =>{
           <h2>Diseña aqui tus entrenamientos</h2>
         </div>
         <div className="selectores">
-          <div className="selector">Crear</div>
+          <div className="selector" onClick={enviarDatos}>Crear</div>
           <div className="selector">Revisar</div>
           <div className="selector">Diario</div>
         </div>
@@ -65,40 +81,35 @@ const handleClick = (e) =>{
       <div className="contenerdor-componente">
         <div className="componente">
 
-        <form className='formulario'>
+        <form  name='dia' className='formulario'>
           <input type="text" name="dia" id="dia" placeholder='Sesion-Dia'  onChange={onImputChange}/>
 
-          <div>
-            <input type="text" name="titulo-p1" id="titulo-p1" placeholder='Titulo-p1' onChange={onImputChange}/>
+          <div name='parte1'>
+            <input type="text" name="tituloP1" id="tituloP1" placeholder='Titulo-p1' onChange={onImputChange}/>
             <textarea name="p1" id="" cols="30" rows="10" placeholder='p1' onChange={onImputChange}></textarea>
           </div>
 
-          <div>
-            <input type="text" name="titulo-p2" id="titulo-p2" placeholder='Titulo-p2'onChange={onImputChange}/>
+          <div name='parte2'>
+            <input type="text" name="tituloP2" id="tituloP2" placeholder='Titulo-p2'onChange={onImputChange}/>
             <textarea name="p2" id="" cols="30" rows="10" placeholder='p2'onChange={onImputChange}></textarea>
           </div>
 
-          <div>
-            <input type="text" name="titulo-p3" id="titulo-p3" placeholder='Titulo-p3' onChange={onImputChange}/>
+          <div name='parte3'>
+            <input type="text" name="tituloP3" id="tituloP3" placeholder='Titulo-p3' onChange={onImputChange}/>
             <textarea name="p3" id="" cols="30" rows="10" placeholder='p3'onChange={onImputChange}></textarea>
           </div>
 
-          <div>
-            <input type="text" name="titulo-p4" id="titulo-p4" placeholder='Titulo-p4' onChange={onImputChange}/>
+          <div name='parte4'>
+            <input type="text" name="tituloP4" id="tituloP4" placeholder='Titulo-p4' onChange={onImputChange}/>
             <textarea name="p4" id="" cols="30" rows="10" placeholder='p4' onChange={onImputChange}></textarea>
           </div>
 
           <button onClick={handleClick}>Enviar</button>
         </form>
 
-        <div>
-
-        </div>
 
         </div>
       </div>
-{JSON.stringify(sesion)}
-
 
     </div>
   )
