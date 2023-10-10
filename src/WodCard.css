@@ -1,5 +1,6 @@
 .card {
     width: 15rem;
+    height: 20rem;
     padding: 1.5rem;
     background-color: rgba(239, 243, 245, 0.932);
     border-radius: 1rem;
@@ -8,19 +9,13 @@
     text-align: center;
     cursor: pointer;
     white-space: pre-line;
-    overflow: auto;
-    -webkit-scrollbar {
-        display: none;
-       }
-    
-
-
-    &:hover {
-        transform: scale(1.1);
-    }
-
-
+    overflow: scroll;
 }
+
+.card::-webkit-scrollbar{
+    display: none;
+}
+
 
 .wodcard-dia {
     color: rgb(27, 99, 255);
@@ -33,9 +28,45 @@
     margin-bottom: 0.5rem;
 }
 
+.tit {
+    color: rgb(0, 0, 126);
+    font-weight: bold;
+}
 
+.botones-card {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 10px;
 
+}
 
+.botonCard-actualizar {
+    width: 5.5rem;
+    background-color: #fda500;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
+}
 
+.botonCard-borrar {
+    width: 5.5rem;
+    background-color: #942323;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
+}
+
+.botonCard-actualizar:hover,
+.botonCard-borrar:hover {
+    background-color: #0d9101;
+}

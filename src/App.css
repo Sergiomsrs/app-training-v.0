@@ -33,7 +33,7 @@
   padding: 0.3rem;
   display: flex;
   justify-content: center;
-  font-style: bold;
+  font-weight: bold;
 }
 
 .selector-white{
@@ -45,7 +45,7 @@
 }
 
 .contenerdor-componente {
-
+  width: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
 .formulario{
@@ -73,7 +74,69 @@ button{
   cursor: pointer;
 }
 
+.container1 {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.22rem;
+  
+}
+
+.main-card-form {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
+.cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
+.cont p{
+  color:rgb(166, 255, 0);
+  width: 5rem;
+}
+
+.cont label{
+  color:aliceblue;
+  width: 5rem;
+}
+
+.card-form{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.boton-guardar {
+  background-color:  blue; /* Azul */
+  border: none;
+  border-radius: 10px; /* Bordes redondeados */
+  color: #fff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  outline: none; /* Quita el contorno al hacer clic */
+}
+
+.boton-guardar:hover {
+  background-color:  rgb(33, 33, 211); /* Cambia el color al pasar sobre el botón */
+}
+
+
+.contenedor-bajo{
+  display: flex;
+  justify-content: center;
+}
+
+.new-form{
+  display: flex;
+  justify-content: center;
+  margin-left: 9.5rem;
+}
