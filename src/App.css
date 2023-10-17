@@ -1,17 +1,35 @@
 .app {
   
-  display: grid;
-  grid-template-rows: 1fr, 3fr;
+  display: flex;
+  flex-direction: column;
   row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+ 
+  
+  
 }
 
 .contenedor-cabecera {
+
+  height: 25vh; 
+  width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+}
+
+.contenerdor-componente {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  
 }
 
 .titulos {
@@ -44,24 +62,19 @@
   font-style: bold;
 }
 
-.contenerdor-componente {
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .componente{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   justify-items: center;
+  gap: 5rem;
 }
 
 .formulario{
-  width: 75%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 
@@ -77,8 +90,11 @@ button{
 .container1 {
 
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 2.22rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
   
 }
 
@@ -106,6 +122,7 @@ button{
 .cont label{
   color:aliceblue;
   width: 5rem;
+
 }
 
 .card-form{
@@ -129,14 +146,54 @@ button{
   background-color:  rgb(33, 33, 211); /* Cambia el color al pasar sobre el botón */
 }
 
-
-.contenedor-bajo{
+.componente-form{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
-.new-form{
+
+.navbar {
+  color: #fff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
   display: flex;
-  justify-content: center;
-  margin-left: 9.5rem;
+  justify-content: space-between; /* Distribuye los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
 }
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color:  rgb(38, 38, 204);;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.user-title{
+  text-transform: capitalize;
+}
+
+
+
+

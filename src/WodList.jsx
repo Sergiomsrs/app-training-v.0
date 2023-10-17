@@ -8,12 +8,13 @@ export const WodList = () => {
 const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    //fetch('src/datosCompleto.json')
-    fetch('http://localhost:8080/api/entrenamientos')
+    fetch('src/datosCompleto.json')
+   // fetch('http://localhost:8080/api/entrenamientos')
       .then(response => response.json())
       .then(data => setUserData(data))
       .catch(error => console.error('Error:', error));
-  }, [userData]);
+  }, []);
+  console.log(userData)
 
     return (
 

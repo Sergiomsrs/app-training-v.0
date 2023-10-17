@@ -1,0 +1,27 @@
+PROPUESTA: Creacion de una app de gestion de entrenammientos con 3 seciones, donde de cara al entrenador tendra utilidades para crear y almacenar los wod
+realizados, y una zona donde se puedan ver estadisticas del diseño, como grupos musculares implicados, numeros totales de reps, ets..
+
+De cara al usuario, tendra una zona donde ver los wods programados para la semana/mes, un repositorio de wods y un blog.
+
+Seccion de diseño: 
+Implementa:
+Servicio de creacion de wod con base de datos,
+Seccion donde revisar el wod antes de subirlo
+Seccion donde aparecen todos los wods programados en un margen de tiempo
+Seccion de estadisticas de los wods diseñados
+
+V.0
+[] Implementar la UI de 3 secciones para crear, editar y revisar wod.
+[] Implementar Navbar con Routing a Seccion principal, blog y repositorio de wod.
+[] Implementar Autenticacion basica.
+
+
+V.01
+
+[] Implementar seccion revisar wod desde JSON statico
+[] Implementar seccion listado de wod desde JSON statico
+[] Implementar blog
+[] Implementar repositorio de wod desde JSON estatico
+
+
+

@@ -98,9 +98,21 @@ export const Form = () => {
             <div className='wodcard-container-form'>
                 <div className='card'>
                     <p className='wodcard-dia'>{parte1}</p>
-                    <p>{parte2}</p>
-                    <p>{parte3}</p>
-                    <p>{parte4}</p>
+                    {parte2?
+            <>
+              <p className='tit'>{'Warm Up'}</p>
+              <p>{parte2}</p> 
+              </> : ''}
+              {parte3?
+            <>
+              <p className='tit'>{'Strenght'}</p>
+              <p>{parte3}</p> 
+              </> : ''}
+              {parte4?
+            <>
+              <p className='tit'>{'Wod'}</p>
+              <p>{parte4}</p> 
+              </> : ''}
                 </div>
             </div>
             </div>
@@ -116,9 +128,6 @@ export const Form = () => {
 
 
         </div>
-
-
-
 
 
     )
