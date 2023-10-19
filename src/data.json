@@ -2,20 +2,20 @@
   {
     "id": 1,
     "parte1": {
-      "t1": "Desde fet",
-      "p1": "b"
+      "t1": "Warm Up",
+      "p1": "5' Cal AsBike"
     },
     "parte2": {
-      "t2": "a",
-      "p2": "c"
+      "t2": "Strength",
+      "p2": "30 Clean & Jerk"
     },
     "parte3": {
-      "t3": "s",
-      "p3": "s"
+      "t3": "Wod",
+      "p3": "For Time\n30DU\n30PushUp"
     },
     "parte4": {
-      "t4": "ss",
-      "p4": "sd"
+      "t4": "Core",
+      "p4": "3x Tabata Core"
     }
   },
   {

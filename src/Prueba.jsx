@@ -6,25 +6,9 @@ import WodCard from './WodCard';
 export const Prueba = () => {
 
   const [userData, setUserData] = useState([]);
-  const [wod, setWod] = useState({
-    "id": '',
-    "parte1": {
-      "t1": "",
-      "p1": ""
-    },
-    "parte2": {
-      "t2": "",
-      "p2": "",
-    },
-    "parte3": {
-      "t3": "",
-      "p3": "",
-    },
-    "parte4": {
-      "t4": "",
-      "p4": "",
-    }
-  });
+  const [id, setid] = useState(1)
+  const [selectedId, setSelectedId] = useState(1) 
+ 
 
 
   useEffect(function () {
@@ -36,39 +20,46 @@ export const Prueba = () => {
 
   }, []);
 
+  const wodFilter = userData.filter( wod => wod.id == selectedId)
 
-  useEffect(() => {
-    const wods = userData.find(e => e.id == 2)
-    const { id, parte1, parte2, parte3, parte4 } = wod
-
-    console.log(id)
+  const onImputChange = (e) => {
 
 
-
-
-
-
-  }, [userData]);
-
-  console.log(wod)
-
-
+    const {value } = e.target
+    setid(value)
+  }
+  
+  const onClick = () =>{
+    setSelectedId(id)
+  }
+  
+  console.log(selectedId)
 
   return (
 
     <div className="container1">
 
-
       <>
         <section className='wodcard-container'>
-  
 
-            <WodCard
-              partea={'parte1'}
-              parteb={'parte2'}
-              partec={'parte3'}
-              parted={'parte4'}
-            ></WodCard>
+          <input type="text" name="id" onChange={onImputChange} />
+          <button onClick={onClick}>Click</button>
+
+          {
+            wodFilter.map(wod =>{
+              return(
+                <WodCard
+                key={wod.id}
+                partea={wod.parte1.t1}
+                parteb={wod.parte2.p2}
+                partec={wod.parte3.p3}
+                parted={wod.parte4.p4}
+              ></WodCard>
+
+              )
+            })
+          }
+  
   
         </section>
       </>
