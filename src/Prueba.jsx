@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import WodCard from './WodCard';
 
 export const Prueba = () => {
 
   const [userData, setUserData] = useState([]);
-  const [id, setid] = useState(1)
-  const [selectedId, setSelectedId] = useState(1) 
- 
+  const [selectedId, setSelectedId] = useState(1)
+
 
 
   useEffect(function () {
@@ -20,55 +18,37 @@ export const Prueba = () => {
 
   }, []);
 
-  const wodFilter = userData.filter( wod => wod.id == selectedId)
+  const wodFilter = userData.filter(wod => wod.id == selectedId)
 
-  const onImputChange = (e) => {
-
-
-    const {value } = e.target
-    setid(value)
+  const handleSeleccion = (event) => {
+    setSelectedId(event.target.value);
   }
-  
-  const onClick = () =>{
-    setSelectedId(id)
-  }
-  
-  console.log(selectedId)
+
 
   return (
 
     <div className="container1">
+      <section className='wodcard-container'>
 
-      <>
-        <section className='wodcard-container'>
+        <select onChange={handleSeleccion}>
+          {userData.map(
+            user => <option key={user.id} value={user.id}>{user.id}</option>
+          )}
 
-          <input type="text" name="id" onChange={onImputChange} />
-          <button onClick={onClick}>Click</button>
+        </select>
 
-          {
-            wodFilter.map(wod =>{
-              return(
-                <WodCard
-                key={wod.id}
-                partea={wod.parte1.t1}
-                parteb={wod.parte2.p2}
-                partec={wod.parte3.p3}
-                parted={wod.parte4.p4}
-              ></WodCard>
+        {wodFilter.map(wod => {
+          return (
+            <WodCard
+              key={wod.id}
+              partea={wod.parte1.t1}
+              parteb={wod.parte2.p2}
+              partec={wod.parte3.p3}
+              parted={wod.parte4.p4}
+            ></WodCard>)
+        })}
 
-              )
-            })
-          }
-  
-  
-        </section>
-      </>
-
-
-
+      </section>
     </div>
-
-
-
   )
 }
