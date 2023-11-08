@@ -4,6 +4,7 @@ import { NewForm } from './NewForm';
 import { Form } from './Form';
 import { WodList } from './WodList';
 import { Prueba } from './Prueba';
+import { Contenedor } from './dinamicForm/Contenedor';
 
 function App() {
 
@@ -49,8 +50,6 @@ function App() {
 
 
   const onImputChange = (e) => {
-
-
     const { name, value } = e.target
     setSesion({
       ...sesion,
@@ -129,7 +128,7 @@ function App() {
       <main className="contenerdor-componente">
         <div className="componente">
           {
-            selector === 1 ? <> <NewForm onImputChange={onImputChange} enviarDatos={enviarDatos} /> <Form /> </>
+            selector === 1 ? <>  <Contenedor/> </>
               : selector === 2 ? <Prueba />
                 : selector === 3 ? <WodList />
                   : null

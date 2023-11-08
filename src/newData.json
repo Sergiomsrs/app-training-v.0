@@ -1,0 +1,53 @@
+[
+    {
+        "ejercicios": [
+            {
+                "id": 1,
+                "mov": "5",
+                "rep": "AS Bike"
+            }
+        ],
+        "id": 1,
+        "title": "Warm Up",
+        "desc": "For Time"
+    },
+    {
+        "ejercicios": [
+            {
+                "id": 1,
+                "mov": "3",
+                "rep": "Clean"
+            },
+            {
+                "id": 2,
+                "mov": "3 ",
+                "rep": "PowerClean"
+            },
+            {
+                "id": 3,
+                "mov": "3",
+                "rep": "Hang Power Clean"
+            }
+        ],
+        "id": 2,
+        "title": "Strenght",
+        "desc": "For Quality"
+    },
+    {
+        "ejercicios": [
+            {
+                "id": 1,
+                "mov": "2",
+                "rep": "Push Up"
+            },
+            {
+                "id": 2,
+                "mov": "2",
+                "rep": "PullUp"
+            }
+        ],
+        "id": 3,
+        "title": "Wod",
+        "desc": "Amrap"
+    }
+]

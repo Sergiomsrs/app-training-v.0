@@ -1,0 +1,36 @@
+fieldset{
+    width: 50vb;
+    background-color: #fff;
+}
+
+
+
+.exercice-row{
+    display: flex;
+    gap: 5px;
+}
+
+.input-rep{
+    width: 20px;
+    border: solid 1px black;
+}
+
+.input-mov{
+    flex: 1;
+    border: solid 1px black;
+}
+
+.boton {
+    background-color:  blue; /* Azul */
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    outline: none; /* Quita el contorno al hacer clic */
+  }
+  
+  .boton:hover {
+    background-color:  rgb(33, 33, 211); /* Cambia el color al pasar sobre el botón */
+  }

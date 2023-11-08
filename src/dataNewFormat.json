@@ -1,0 +1,125 @@
+
+
+
+{
+    "sesion":{
+        "identificador": "aa",
+        "contenido": {
+            "seccion1": {
+                "bloque1": {
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                },
+                "bloque2":{
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                }
+            },
+            "seccion2": {
+                "bloque1": {
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                },
+                "bloque2":{
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                }
+            },
+            "seccion3": {
+                "bloque1": {
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                },
+                "bloque2":{
+                    "nombre":"",
+                    "Rondas":"",
+                    "Ejercicios":{
+                        "ej1": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej2": {
+                            "reps": "",
+                            "mov": ""
+                        },
+                        "ej3": {
+                            "reps": "",
+                            "mov": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
