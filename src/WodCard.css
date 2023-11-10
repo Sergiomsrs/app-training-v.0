@@ -114,3 +114,13 @@
 .botonCard-borrar:hover {
     background-color: #0d9101;
 }
+
+.row-card{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height:20px;
+}

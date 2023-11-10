@@ -57,7 +57,7 @@ export const Contenedor = () => {
     return (
       <div className="contenerdor-form">
         {apps.map((app) => (
-          <fieldset key={app.id}>
+          <div className="contenedor-block" key={app.id}>
             <Appi ejercicios={app.ejercicios} 
             handleInputChange={(e, index) => handleInputChange(e, app.id, index)} 
             handleClick={() => handleClick(app.id)} 
@@ -66,7 +66,7 @@ export const Contenedor = () => {
             title={app.title} 
             desc={app.desc} 
             />
-          </fieldset>
+          </div>
         ))}
   
         <div>

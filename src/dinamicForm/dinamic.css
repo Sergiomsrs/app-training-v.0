@@ -1,6 +1,15 @@
-fieldset{
+.contenerdor-form{
+    gap: 10px;
+    
+}
+
+
+.contenedor-block{
     width: 50vb;
-    background-color: #fff;
+    background-color: rgba(239, 243, 245, 0.932);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -12,12 +21,12 @@ fieldset{
 
 .input-rep{
     width: 20px;
-    border: solid 1px black;
+    
 }
 
 .input-mov{
     flex: 1;
-    border: solid 1px black;
+    
 }
 
 .boton {
@@ -33,4 +42,10 @@ fieldset{
   
   .boton:hover {
     background-color:  rgb(33, 33, 211); /* Cambia el color al pasar sobre el botón */
+  }
+
+  .head-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
   }

@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import WodCard from './WodCard';
+import { NewWodCard } from "./newWodcard";
+
 
 export const Prueba = () => {
 
@@ -10,7 +11,7 @@ export const Prueba = () => {
 
 
   useEffect(function () {
-    fetch('src/data.json')
+    fetch('src/newData.json')
       .then(res => res.json())
       .then(response => {
         setUserData(response)
@@ -37,15 +38,14 @@ export const Prueba = () => {
 
         </select>
 
-        {wodFilter.map(wod => {
+        {userData.map(wod => {
           return (
-            <WodCard
+            <NewWodCard
               key={wod.id}
-              partea={wod.parte1.t1}
-              parteb={wod.parte2.p2}
-              partec={wod.parte3.p3}
-              parted={wod.parte4.p4}
-            ></WodCard>)
+              data={wod.data}
+            
+            />
+          )
         })}
 
       </section>

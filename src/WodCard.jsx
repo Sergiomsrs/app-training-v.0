@@ -1,7 +1,7 @@
 import './WodCard.css'
 
 
-function wodCard({ partea, parteb, partec, parted }) {
+function wodCard({ partea, parteb, partec, parted, handleDelete}) {
 
 
   return (
@@ -32,7 +32,7 @@ function wodCard({ partea, parteb, partec, parted }) {
 
 
           <footer className='botones-card'>
-            <button className='botonCard-borrar'>Borrar</button>
+            <button className='botonCard-borrar' onClick={handleDelete}>Borrar</button>
             <button className='botonCard-actualizar'>Actualizar</button>
           </footer>
 

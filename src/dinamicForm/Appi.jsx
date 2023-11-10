@@ -4,14 +4,17 @@
 import { Ejercicio } from './Ejercicio'
 
 
-function Appi({ejercicios, handleInputChange, handleClick,title , onTitleChange, desc, onDescChange}) {
+function Appi({ ejercicios, handleInputChange, handleClick, title, onTitleChange, desc, onDescChange }) {
 
 
-  
+
 
   return (
     <>
+      <div className='head-form'>
       <input type="text" value={title} onChange={onTitleChange} placeholder="Título" />
+      <input type="text" value={desc} onChange={onDescChange} placeholder="Descripcion" />
+      </div>
       <form>
         {
           ejercicios.map((ej, index) => {
@@ -24,7 +27,6 @@ function Appi({ejercicios, handleInputChange, handleClick,title , onTitleChange,
         }
         <button className='boton' type='button' onClick={handleClick}>+</button>
       </form>
-        <input type="text" value={desc} onChange={onDescChange} placeholder="Descripcion" />
 
     </>
   )

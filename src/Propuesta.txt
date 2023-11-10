@@ -11,15 +11,15 @@ Seccion donde aparecen todos los wods programados en un margen de tiempo
 Seccion de estadisticas de los wods diseñados
 
 V.0
-[] Implementar la UI de 3 secciones para crear, editar y revisar wod.
+[X] Implementar la UI de 3 secciones para crear, editar y revisar wod.
 [] Implementar Navbar con Routing a Seccion principal, blog y repositorio de wod.
-[] Implementar Autenticacion basica.
+[X] Implementar Autenticacion basica.
 
 
 V.01
 
-[] Implementar seccion revisar wod desde JSON statico
-[] Implementar seccion listado de wod desde JSON statico
+[X] Implementar seccion revisar wod desde JSON statico
+[X] Implementar seccion listado de wod desde JSON statico
 [] Implementar blog
 [] Implementar repositorio de wod desde JSON estatico
 
