@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import './App.css'
-import { NewForm } from './NewForm';
-import { Form } from './Form';
-import { WodList } from './WodList';
-import { Prueba } from './Prueba';
-import { Contenedor } from './dinamicForm/Contenedor';
+import '../css/App.css'
+import { WodList } from '../WodList';
+import { Revisar } from '../Revisar';
+import { Contenedor } from '../dinamicForm/Contenedor';
 
 function App() {
 
@@ -13,18 +11,6 @@ function App() {
   const [selectorClassRevisar, setSelectorClassRevisar] = useState('blue')
   const [selectorClassDiario, setSelectorClassDiario] = useState('blue')
 
-
-  const [sesion, setSesion] = useState({
-    dia: '',
-    tituloP1: '',
-    p1: '',
-    tituloP2: '',
-    p2: '',
-    tituloP3: '',
-    p3: '',
-    tituloP4: '',
-    p4: '',
-  });
 
   const stateCrear = () => {
 
@@ -49,64 +35,6 @@ function App() {
   }
 
 
-  const onImputChange = (e) => {
-    const { name, value } = e.target
-    setSesion({
-      ...sesion,
-      [name]: value,
-    })
-  }
-
-
-
-  const json = {
-    dia: sesion.dia, parte1: {
-      t1: sesion.tituloP1, p1: sesion.p1,
-    },
-    parte2: {
-      t2: sesion.tituloP2,
-      p2: sesion.p2,
-    },
-    parte3: {
-      t3: sesion.tituloP3,
-      p3: sesion.p3,
-    },
-    parte4: {
-      t4: sesion.tituloP4,
-      p4: sesion.p4,
-    },
-
-  }
-
-
-
-
-  function enviarDatos() {
-    const data = {
-      parte1: JSON.stringify(json),
-      parte2: '',
-      parte3: '',
-      parte4: "",
-    };
-
-    fetch('http://localhost:8080/api/entrenamiento/guardar', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }
-
-
-
   return (
 
 
@@ -129,7 +57,7 @@ function App() {
         <div className="componente">
           {
             selector === 1 ? <>  <Contenedor/> </>
-              : selector === 2 ? <Prueba />
+              : selector === 2 ? <Revisar />
                 : selector === 3 ? <WodList />
                   : null
           }

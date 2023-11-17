@@ -8,7 +8,7 @@ export const WodList = () => {
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        fetch('src/datosCompleto.json')
+        fetch('src/data/datosCompleto.json')
             // fetch('http://localhost:8080/api/entrenamientos')
             .then(response => response.json())
             .then(data => setUserData(data))

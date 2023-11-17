@@ -4,7 +4,7 @@
 import { Ejercicio } from './Ejercicio'
 
 
-function Appi({ ejercicios, handleInputChange, handleClick, title, onTitleChange, desc, onDescChange }) {
+function Block({ ejercicios, handleInputChange, handleClick, title, onTitleChange, desc, onDescChange }) {
 
 
 
@@ -32,4 +32,4 @@ function Appi({ ejercicios, handleInputChange, handleClick, title, onTitleChange
   )
 }
 
-export default Appi
+export default Block

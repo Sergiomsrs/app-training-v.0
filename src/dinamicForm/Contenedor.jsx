@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Appi from "./Appi"
+import Block from "./Block"
 import './dinamic.css'
 
 
@@ -58,7 +58,7 @@ export const Contenedor = () => {
       <div className="contenerdor-form">
         {apps.map((app) => (
           <div className="contenedor-block" key={app.id}>
-            <Appi ejercicios={app.ejercicios} 
+            <Block ejercicios={app.ejercicios} 
             handleInputChange={(e, index) => handleInputChange(e, app.id, index)} 
             handleClick={() => handleClick(app.id)} 
             onTitleChange={(e) => handleTitleChange(e, app.id)}

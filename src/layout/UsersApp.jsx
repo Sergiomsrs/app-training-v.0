@@ -1,8 +1,8 @@
 
-import { Navbar } from "./layout/Navbar"
-import { useAuth } from "./auth/hooks/useAuth"
+import { Navbar } from "./Navbar"
+import { useAuth } from "../auth/hooks/useAuth"
 import App from "./App"
-import { LoginPage } from "./auth/pages/LoginPage"
+import { LoginPage } from "../auth/pages/LoginPage"
 
 export const UsersApp = () => {
 

@@ -1,4 +1,4 @@
-import './WodCard.css'
+import './css/WodCard.css'
 
 
 function wodCard({ partea, parteb, partec, parted, handleDelete}) {

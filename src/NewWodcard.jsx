@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './WodCard.css'
+import './css/WodCard.css'
 
 
 export function NewWodCard({ data }) {
