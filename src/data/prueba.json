@@ -1,0 +1,33 @@
+{
+    "id": "1",
+    "bloques": [
+      {
+        "titulo": "Frutas",
+        "descripcion": "Sección de frutas frescas",
+        "exercices": [
+          {
+            "rep": 3,
+            "mov": "Manzanas"
+          },
+          {
+            "rep": 2,
+            "mov": "Plátanos"
+          }
+        ]
+      },
+      {
+        "titulo": "Lácteos",
+        "descripcion": "Productos lácteos",
+        "exercices": [
+          {
+            "rep": 1,
+            "mov": "Leche"
+          },
+          {
+            "rep": 2,
+            "mov": "Queso"
+          }
+        ]
+      }
+    ]
+  }

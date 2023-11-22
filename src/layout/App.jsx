@@ -10,6 +10,8 @@ function App() {
   const [selectorClassCrear, setSelectorClassCrear] = useState('white')
   const [selectorClassRevisar, setSelectorClassRevisar] = useState('blue')
   const [selectorClassDiario, setSelectorClassDiario] = useState('blue')
+  const [rev, setRev] = useState([])
+  const [apps, setApps] = useState([{ ejercicios: [], id: 1, title: "", desc: "" }]);
 
 
   const stateCrear = () => {
@@ -35,6 +37,7 @@ function App() {
   }
 
 
+
   return (
 
 
@@ -56,8 +59,8 @@ function App() {
       <main className="contenerdor-componente">
         <div className="componente">
           {
-            selector === 1 ? <>  <Contenedor/> </>
-              : selector === 2 ? <Revisar />
+            selector === 1 ? <>  <Contenedor apps={apps} setApps={setApps} setRev={setRev} rev= {rev} /> </>
+              : selector === 2 ? <Revisar setRev={setRev} rev= {rev} />
                 : selector === 3 ? <WodList />
                   : null
           }

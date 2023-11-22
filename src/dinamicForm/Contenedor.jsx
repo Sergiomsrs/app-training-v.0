@@ -1,15 +1,36 @@
-import { useState } from "react"
+/* eslint-disable react/prop-types */
+
+
+import { ultimoID } from "../funcion";
 import Block from "./Block"
 import './dinamic.css'
 
 
-export const Contenedor = () => {
-    const [apps, setApps] = useState([{ ejercicios: [], id: 1, title: "", desc: "" }]);
+export const Contenedor = ({setRev, rev, apps, setApps}) => {
+
+
+  function enviarDatos() {
+    fetch('http://localhost:8080/list', {
+        method: 'POST', // Puedes usar GET, POST, PUT, DELETE, etc.
+        headers: {
+            'Content-Type': 'application/json', // Especifica el tipo de contenido que estás enviando
+        },
+        body: JSON.stringify(rev) // El contenido a enviar, transformado a JSON
+        
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Aquí puedes manejar la respuesta de la API
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        
+}
     
     
-  
-  
     const handleInputChange = (e, appId, index) => {
+      
       const { name, value } = e.target;
       const newApps = [...apps];
       const appIndex = newApps.findIndex(app => app.id === appId);
@@ -32,11 +53,20 @@ export const Contenedor = () => {
       setApps([...apps, { ejercicios: [], id: newId, title: "", desc: "" }]);
     };
 
-    const handleGuardar = () => {
-        console.log(apps);
-        
-       
-      };
+    const handleGuardar = async () => {
+      try {
+          // Espera a que se resuelva la promesa antes de continuar
+          const id = await ultimoID();
+  
+          setRev({
+              id: id + 1,
+              bloques: apps,
+          });
+      } catch (error) {
+          console.error('Error obteniendo el último ID:', error);
+          // Manejar el error según sea necesario
+      }
+  };
 
       const handleTitleChange = (e, appId) => {
         const { value } = e.target;
@@ -72,6 +102,7 @@ export const Contenedor = () => {
         <div>
           <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
           <button className='boton' type='button' onClick={handleGuardar}>Guardar</button>
+          <button className='boton' type='button' onClick={enviarDatos}>Enviar</button>
         </div>
       </div>
     );

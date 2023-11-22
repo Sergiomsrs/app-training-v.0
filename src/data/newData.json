@@ -54,5 +54,45 @@
                 "desc": "Amrap"
             }
         ]
+    },
+
+    {
+        "ejercicios": [
+            {
+                "id": 1,
+                "rep": "d",
+                "mov": "d"
+            },
+            {
+                "id": 2,
+                "rep": "d",
+                "mov": "d"
+            }
+        ],
+        "id": 1,
+        "title": "sadf",
+        "desc": "asdf"
+    },
+    {
+        "ejercicios": [
+            {
+                "id": 1,
+                "rep": "d",
+                "mov": "d"
+            },
+            {
+                "id": 2,
+                "rep": "d",
+                "mov": "d"
+            },
+            {
+                "id": 3,
+                "rep": "dd",
+                "mov": "d"
+            }
+        ],
+        "id": 2,
+        "title": "asdf",
+        "desc": "asdf"
     }
 ]
