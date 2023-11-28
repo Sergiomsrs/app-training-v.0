@@ -2,17 +2,17 @@
   
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+
   justify-content: center;
   align-items: center;
- 
+
   
   
 }
 
 .contenedor-cabecera {
 
-  height: 25vh; 
+  height: 15rem; 
   width: 100%;
   color: white;
   display: flex;
@@ -160,6 +160,7 @@ button{
   display: flex;
   justify-content: space-between; /* Distribuye los elementos a los extremos */
   align-items: center; /* Centra verticalmente los elementos */
+  
 }
 
 .navbar-brand {

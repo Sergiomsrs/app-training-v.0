@@ -6,12 +6,12 @@ export const Navbar = ({ login, handlerLogout }) => {
     <>
 
 <div className="navbar">
-  <a href="#" className="navbar-brand">App-Training</a>
+  <a href="/" className="navbar-brand">App-Training</a>
   <span className="user-title">
             {login.user?.username}
           </span>
   <ul className="navbar-nav">
-    <li className="nav-item"><a href="#" className="nav-link">Servicios</a></li>
+    <li className="nav-item"><a href="/blog" className="nav-link">Blog</a></li>
     <li className="nav-item"><a href="#" onClick={handlerLogout} className="nav-link">Logout</a></li>
   </ul>
 </div>
