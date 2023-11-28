@@ -6,8 +6,10 @@ import { ultimoID } from './funcion';
 
 
 
+
 // traer la logica desde newWodCard
 export const Revisar = () => {
+
 
   const [userData, setUserData] = useState([]);
   const [id, setId] = useState(null);
@@ -88,6 +90,7 @@ export const Revisar = () => {
       data={userData}
       handleDelete={handleDelete}
       />
+
      
 
       </section>

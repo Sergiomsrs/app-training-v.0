@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
 
 
+import { useContext } from "react";
+import { FormContext } from "../context/FormContext";
 import { ultimoID } from "../funcion";
 import Block from "./Block"
 import './dinamic.css'
 
 
-export const Contenedor = ({setRev, rev, apps, setApps}) => {
+export const Contenedor = () => {
+
+  const {setRev, rev, apps, setApps} = useContext(FormContext)
 
 
   function enviarDatos() {
