@@ -84,7 +84,7 @@ export const Contenedor = () => {
         newApps[appIndex].desc = value;
         setApps(newApps);
       };
-  
+
     return (
       <div className="contenerdor-form">
         {apps.map((app) => (

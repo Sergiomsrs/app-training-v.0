@@ -45,17 +45,18 @@ function Block({
         />
       </div>
       <form>
-        {ejercicios.map((ej, index) => {
-          const values = ejercicioValues[index] || { rep: "", mov: "" };
-          return (
-            <div key={ej.id}>
-              <Ejercicio
-                handleInputChange={(e) => handleEjercicioChange(e, index)}
-                values={values}
-              />
-            </div>
-          );
-        })}
+        
+      {ejercicios.map((ej, index) => {
+  const values = ej || { rep: "", mov: "" };
+  return (
+    <div key={ej.id}>
+      <Ejercicio
+        handleInputChange={(e) => handleEjercicioChange(e, index)}
+        values={values}
+      />
+    </div>
+  );
+})}
         <button className='boton' type='button' onClick={handleClick}>+</button>
       </form>
     </>
