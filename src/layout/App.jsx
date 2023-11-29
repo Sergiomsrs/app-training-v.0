@@ -1,16 +1,15 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import '../css/App.css'
 import { WodList } from '../WodList';
 import { Revisar } from '../Revisar';
 import { Contenedor } from '../dinamicForm/Contenedor';
+import { FormContext } from '../context/FormContext';
 
 function App() {
 
-  const [selector, setSelector] = useState(1)
-  const [selectorClassCrear, setSelectorClassCrear] = useState('white')
-  const [selectorClassRevisar, setSelectorClassRevisar] = useState('blue')
-  const [selectorClassDiario, setSelectorClassDiario] = useState('blue')
-
+  const {selector, setSelector,
+    selectorClassCrear, setSelectorClassCrear, selectorClassRevisar, setSelectorClassRevisar,
+    selectorClassDiario, setSelectorClassDiario} = useContext(FormContext)
 
   const stateCrear = () => {
 

@@ -6,13 +6,15 @@ export const LoginPage = ({handlerLogin}) => {
 
 
 
+
+
     const initialLoginForm = {
         username: '',
         password: '',
     }
     const [loginForm, setLoginForm] = useState(initialLoginForm);
     const { username, password } = loginForm
-
+    
     const onImputChange = ({target}) =>{
         const {name, value} = target
         setLoginForm({
@@ -36,6 +38,7 @@ export const LoginPage = ({handlerLogin}) => {
     
 
         setLoginForm(initialLoginForm)
+         
     }
 
 
