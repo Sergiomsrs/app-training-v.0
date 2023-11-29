@@ -1,5 +1,5 @@
 export const Ejercicio = ({ handleInputChange, values }) => {
-    const { rep = "", mov = "" } = values; // Asegurar que siempre haya un valor definido
+    const { rep = "", mov = "" } = values; 
   
     return (
       <>

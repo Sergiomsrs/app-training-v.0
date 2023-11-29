@@ -10,16 +10,23 @@ import './dinamic.css'
 
 export const Contenedor = () => {
 
-  const {setRev, rev, apps, setApps} = useContext(FormContext)
+  const {apps, setApps} = useContext(FormContext)
 
 
-  function enviarDatos() {
-    fetch('http://localhost:8080/list', {
+  const enviarDatos= async () => {
+
+    try {
+      // Espera a que se resuelva la promesa antes de continuar
+      const id = await ultimoID();
+      fetch('http://localhost:8080/list', {
         method: 'POST', // Puedes usar GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json', // Especifica el tipo de contenido que estás enviando
         },
-        body: JSON.stringify(rev) // El contenido a enviar, transformado a JSON
+        body: JSON.stringify({
+          id: id + 1,
+          bloques: apps,
+      }) // El contenido a enviar, transformado a JSON
         
     })
         .then(response => response.json())
@@ -29,7 +36,11 @@ export const Contenedor = () => {
         .catch(error => {
             console.error('Error:', error);
         });
-        
+
+  } catch (error) {
+      console.error('Error obteniendo el último ID:', error);
+      // Manejar el error según sea necesario
+  }
 }
     
     
@@ -57,20 +68,6 @@ export const Contenedor = () => {
       setApps([...apps, { ejercicios: [], id: newId, title: "", desc: "" }]);
     };
 
-    const handleGuardar = async () => {
-      try {
-          // Espera a que se resuelva la promesa antes de continuar
-          const id = await ultimoID();
-  
-          setRev({
-              id: id + 1,
-              bloques: apps,
-          });
-      } catch (error) {
-          console.error('Error obteniendo el último ID:', error);
-          // Manejar el error según sea necesario
-      }
-  };
 
       const handleTitleChange = (e, appId) => {
         const { value } = e.target;
@@ -105,7 +102,6 @@ export const Contenedor = () => {
   
         <div>
           <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
-          <button className='boton' type='button' onClick={handleGuardar}>Guardar</button>
           <button className='boton' type='button' onClick={enviarDatos}>Enviar</button>
         </div>
       </div>

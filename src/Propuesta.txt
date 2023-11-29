@@ -5,23 +5,23 @@ De cara al usuario, tendra una zona donde ver los wods programados para la seman
 
 Seccion de diseño: 
 Implementa:
-Servicio de creacion de wod con base de datos,
-Seccion donde revisar el wod antes de subirlo
-Seccion donde aparecen todos los wods programados en un margen de tiempo
-Seccion de estadisticas de los wods diseñados
+[✔]Servicio de creacion de wod con base de datos,
+[✔]Seccion donde revisar el wod antes de subirlo
+[]Seccion donde aparecen todos los wods programados en un margen de tiempo
+[]Seccion de estadisticas de los wods diseñados
 
 V.0
-[X] Implementar la UI de 3 secciones para crear, editar y revisar wod.
-[] Implementar Navbar con Routing a Seccion principal, blog y repositorio de wod.
-[X] Implementar Autenticacion basica.
+[✔] Implementar la UI de 3 secciones para crear, editar y revisar wod.
+[✔] Implementar Navbar con Routing a Seccion principal, blog y repositorio de wod.
+[✔] Implementar Autenticacion basica.
 
 
 V.01
 
-[X] Implementar seccion revisar wod desde JSON statico
-[X] Implementar seccion listado de wod desde JSON statico
-[] Implementar blog
-[] Implementar repositorio de wod desde JSON estatico
+[✔] Implementar seccion revisar wod desde JSON statico
+[✔] Implementar seccion listado de wod desde JSON statico
+[✔] Implementar blog
+[✔] Implementar repositorio de wod desde JSON estatico
 
 
 
