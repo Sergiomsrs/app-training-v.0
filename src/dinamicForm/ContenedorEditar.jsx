@@ -1,35 +1,36 @@
+/* eslint-disable react/prop-types */
 
-import { useContext } from "react";
-import { FormContext } from "../context/FormContext";
-import { ultimoID } from "../funcion";
+
+import {  useContext } from "react";
 import Block from "./Block"
 import './dinamic.css'
+import { FormContext } from "../context/FormContext";
+import { useNavigate } from "react-router-dom";
 
 
 export const ContenedorEditar = () => {
 
-  const {apps, setApps , idEdit} = useContext(FormContext)
-
-
-  const enviarDatos= async () => {
+  const {apps, setApps, idEdit, setSelector} = useContext(FormContext)
+  const navigate = useNavigate();
+ 
+  const enviarDatos= () => {
 
     try {
-      // Espera a que se resuelva la promesa antes de continuar
-      const id = await ultimoID();
+
       fetch('http://localhost:8080/list', {
-        method: 'POST', // Puedes usar GET, POST, PUT, DELETE, etc.
+        method: 'POST', 
         headers: {
-            'Content-Type': 'application/json', // Especifica el tipo de contenido que estás enviando
+            'Content-Type': 'application/json', 
         },
         body: JSON.stringify({
-          id: id + 1,
+          id: idEdit,
           bloques: apps,
-      }) // El contenido a enviar, transformado a JSON
+      }) 
         
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Aquí puedes manejar la respuesta de la API
+            console.log(data); 
         })
         .catch(error => {
             console.error('Error:', error);
@@ -37,7 +38,6 @@ export const ContenedorEditar = () => {
 
   } catch (error) {
       console.error('Error obteniendo el último ID:', error);
-      // Manejar el error según sea necesario
   }
 }
     
@@ -83,6 +83,17 @@ export const ContenedorEditar = () => {
         setApps(newApps);
       };
 
+      const handleSendClick = () => {
+        if (window.confirm('¿Estás seguro de que deseas enviar este WOD?')) { 
+          enviarDatos();
+          setApps([{ ejercicios: [], id: 1, title: "", desc: "" }]);
+          setSelector(3);
+          navigate('/app')
+        }
+          
+      
+      }
+
     return (
       <div className="contenerdor-form">
         {apps.map((app) => (
@@ -100,9 +111,9 @@ export const ContenedorEditar = () => {
   
         <div>
           <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
-          <button className='boton' type='button' onClick={enviarDatos}>Enviar</button>
+          <button className='boton' type='button' onClick={handleSendClick}>Enviar</button>
         </div>
-        <h1>{idEdit}</h1>
       </div>
+
     );
 }

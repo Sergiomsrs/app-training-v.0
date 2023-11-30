@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
-import { NewWodCard } from "./NewWodcard";
 import { FormContext } from "./context/FormContext";
+import { RevisarCard } from "./RevisarCard";
 
 // traer la logica desde newWodCard
 export const Revisar = () => {
@@ -13,7 +13,8 @@ export const Revisar = () => {
     <div className="container1">
       <section className='wodcard-container'>
 
-      <NewWodCard
+      <RevisarCard
+        key={apps.id}
       data={{id: "", bloques: apps}}     
       />
 

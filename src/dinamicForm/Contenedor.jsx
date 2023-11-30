@@ -14,11 +14,12 @@ export const Contenedor = () => {
 
 
   const enviarDatos= async () => {
-
-    try {
-      // Espera a que se resuelva la promesa antes de continuar
-      const id = await ultimoID();
-      fetch('http://localhost:8080/list', {
+    if (window.confirm('¿Estás seguro de que deseas enviar este WOD?')) {
+      
+      try {
+        // Espera a que se resuelva la promesa antes de continuar
+        const id = await ultimoID();
+        fetch('http://localhost:8080/list', {
         method: 'POST', // Puedes usar GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json', // Especifica el tipo de contenido que estás enviando
@@ -26,20 +27,22 @@ export const Contenedor = () => {
         body: JSON.stringify({
           id: id + 1,
           bloques: apps,
-      }) // El contenido a enviar, transformado a JSON
+        }) // El contenido a enviar, transformado a JSON
         
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data); // Aquí puedes manejar la respuesta de la API
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
-  } catch (error) {
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); // Aquí puedes manejar la respuesta de la API
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      
+    } catch (error) {
       console.error('Error obteniendo el último ID:', error);
       // Manejar el error según sea necesario
+    }
+    setApps([{ ejercicios: [], id: 1, title: "", desc: "" }]);
   }
 }
     
@@ -54,7 +57,12 @@ export const Contenedor = () => {
         [name]: value,
       };
       setApps(newApps);
+
     };
+
+    const handleResetForm = () => {
+      setApps([{ ejercicios: [], id: 1, title: "", desc: "" }])
+    }
   
     const handleClick = (appId) => {
       const newApps = [...apps];
@@ -102,6 +110,7 @@ export const Contenedor = () => {
   
         <div>
           <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
+          <button className='boton' type='button' onClick={handleResetForm}>Reset</button>
           <button className='boton' type='button' onClick={enviarDatos}>Enviar</button>
         </div>
       </div>

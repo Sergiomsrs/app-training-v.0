@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { NewWodCard } from './NewWodcard';
 import { FormContext } from './context/FormContext';
@@ -9,7 +9,6 @@ export const WodList = () => {
   
   const {userData, setUserData} = useContext(FormContext)
     
-    const [deleted, setDeleted] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:8080/list/listar')
@@ -17,24 +16,22 @@ export const WodList = () => {
             .then(response => response.json())
             .then(data => setUserData(data))
             .catch(error => console.error('Error:', error));
-    }, [deleted]);
+    }, [userData]);
 
+    
+    
     const handleDelete = (idToDelete) => {
       // Realizar la solicitud de eliminación al servidor
       fetch(`http://localhost:8080/list/eliminar/${idToDelete}`, {
         method: 'DELETE',
       })
-        .then(
-          setDeleted(prev => !prev)
-          
-        )
-        .catch(error => console.error('Error al borrar:', error));
+      .then(() => {
+        // Actualizar el estado userData eliminando el elemento con idToDelete
+        setUserData(prevUserData => prevUserData.filter(item => item.id !== idToDelete));
+      })
+      .catch(error => console.error('Error al borrar:', error));
     };
 
-    const handleUpdate = (idToUpdate) => {
-      // Realizar la solicitud de eliminación al servidor
-      alert("el id a actualizar es " + idToUpdate);
-    };
 
 
   
@@ -47,7 +44,6 @@ export const WodList = () => {
             key={item.id}
             data={item}  
             handleDelete={handleDelete}
-            handleUpdate={handleUpdate}
           />
         ))
       )}

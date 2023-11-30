@@ -1,27 +1,34 @@
-/* eslint-disable react/prop-types */
-
-import { useNavigate } from 'react-router-dom';
 import './css/WodCard.css'
-import { FormContext } from './context/FormContext';
 import { useContext } from 'react';
+import { FormContext } from './context/FormContext';
 
 
-export function NewWodCard({data, handleDelete}) {
+
+export function RevisarCard({data}) {
   
-  const { bloques, id } = data; 
-  const navigate = useNavigate();
-  const {setIdEdit, setApps} = useContext(FormContext)
+  const { bloques } = data; 
+  const {setApps, setSelector, setSelectorClassCrear, setSelectorClassRevisar, setSelectorClassDiario} = useContext(FormContext)
+  
 
-  const handleDeleteClick = () => {
-    if (window.confirm('¿Estás seguro de que deseas borrar este WOD?')) {
-      handleDelete(id);
+
+  const handleResetClick = () => {
+    if (window.confirm('¿Estás seguro de que deseas resetear este WOD?')) {
+ 
+      setApps([{ ejercicios: [], id: 1, title: "", desc: "" }]);
+      setSelector(1)
+      setSelectorClassCrear('white')
+      setSelectorClassRevisar('blue')
+      setSelectorClassDiario('blue')
     }
-  };
+      
+  }
 
-  const handleUpdateClick = () => {
-    setIdEdit(id);
-    setApps(bloques);
-    navigate('/editar');
+  const handleOkClick = () => {
+    setSelector(1)
+    setSelectorClassCrear('white')
+    setSelectorClassRevisar('blue')
+    setSelectorClassDiario('blue')
+
   }
 
 
@@ -50,8 +57,8 @@ export function NewWodCard({data, handleDelete}) {
           </div>
 
           <footer className='botones-card'>
-            <button onClick={handleDeleteClick} className='botonCard-borrar'>Borrar</button>
-            <button onClick={handleUpdateClick} className='botonCard-actualizar'>Editar</button>
+            <button onClick={handleResetClick} className='botonCard-borrar'>Reset</button>
+            <button onClick={handleOkClick} className='botonCard-actualizar'>Volver</button>
           </footer>
         </article>
       </section>
