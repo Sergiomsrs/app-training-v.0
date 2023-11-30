@@ -7,9 +7,9 @@ import { FormContext } from '../context/FormContext';
 
 function App() {
 
-  const {selector, setSelector,
+  const { selector, setSelector,
     selectorClassCrear, setSelectorClassCrear, selectorClassRevisar, setSelectorClassRevisar,
-    selectorClassDiario, setSelectorClassDiario} = useContext(FormContext)
+    selectorClassDiario, setSelectorClassDiario } = useContext(FormContext)
 
   const stateCrear = () => {
 
@@ -57,12 +57,18 @@ function App() {
         <div className="componente">
           {
             selector === 1 ? <>  <Contenedor /> </>
-              : selector === 2 ? <Revisar  />
+              : selector === 2 ? <Revisar />
                 : selector === 3 ? <WodList />
                   : null
           }
         </div>
       </main>
+
+      <footer className='footer-principal'>
+        <p>Inicio</p>
+        <p>Volver</p>
+        <p>Blog</p>
+      </footer>
     </div>
   )
 }
