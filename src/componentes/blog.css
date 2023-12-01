@@ -4,6 +4,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: calc(100vh - (3rem + 3rem));
   }
 
   .header-blog {
@@ -26,9 +27,15 @@
   }
 
   .container-blog {
-    width: 80%;
+    width: 100%;
+    min-height: calc(100vh - (25rem));
     margin: auto;
     overflow: hidden;
+    background-image: url('/src/static/1fce0aa5-9584-4369-8c61-6a0438065ce0.png'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover; /* La imagen se ajustará para cubrir todo el contenedor */
+  background-position: center; /* La imagen se centrará en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 20px; 
   }
 
   .article-blog {
@@ -51,4 +58,15 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: aliceblue;
+  } 
+
+  p{
+    max-width: 75%;
+    text-align: justify;
+    
   }

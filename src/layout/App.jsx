@@ -64,11 +64,6 @@ function App() {
         </div>
       </main>
 
-      <footer className='footer-principal'>
-        <p>Inicio</p>
-        <p>Volver</p>
-        <p>Blog</p>
-      </footer>
     </div>
   )
 }

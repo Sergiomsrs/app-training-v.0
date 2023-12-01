@@ -17,6 +17,9 @@
  
 }
 
+
+
+
 .carda{
 
     width: 20rem;
@@ -52,6 +55,7 @@
     height: 18rem;
     padding: 0px;
     overflow: scroll;
+   
 }
 
 .pru::-webkit-scrollbar{
