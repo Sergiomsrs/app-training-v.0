@@ -11,6 +11,8 @@ export const Navbar = ({ login, handlerLogout }) => {
             {login.user?.username}
           </span>
   <ul className="navbar-nav">
+    <li className="nav-item"> <a href="/buscador">Buscador</a></li>
+    <li className="nav-item"><a href="/data">Data</a></li>
     <li className="nav-item"><a href="/blog" className="nav-link">Blog</a></li>
     <li className="nav-item"><a href="#" onClick={handlerLogout} className="nav-link">Logout</a></li>
   </ul>

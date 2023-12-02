@@ -3,8 +3,8 @@ export const Footer = () => {
     
     <>
     <footer className='footer-principal'>
-        <p>Inicio</p>
         <a href="/app">Volver</a>
+        <a href="/buscador">Buscador</a>
         <a href="/data">Data</a>
       </footer>
     </>

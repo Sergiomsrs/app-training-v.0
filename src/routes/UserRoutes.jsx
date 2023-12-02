@@ -7,6 +7,7 @@ import { FormProvider } from "../context/FormProvider"
 import { ContenedorEditar } from "../dinamicForm/ContenedorEditar"
 import { Statistics } from "../componentes/Statistics"
 import { Footer } from "../layout/Footer"
+import { WodSelectedList } from "../componentes/WodSelectedList"
 
 
 export const UserRoutes = ({ handlerLogout, login }) => {
@@ -22,6 +23,7 @@ export const UserRoutes = ({ handlerLogout, login }) => {
         <Route path="/Blog" element={<Blog/>} />
         <Route path="/editar" element={<ContenedorEditar/>} />
         <Route path="/data" element={<Statistics/>} />
+        <Route path="/buscador" element={<WodSelectedList/>} />
         
       </Routes>
       

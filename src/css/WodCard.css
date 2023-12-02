@@ -55,6 +55,7 @@
     height: 18rem;
     padding: 0px;
     overflow: scroll;
+
    
 }
 
@@ -77,6 +78,7 @@
 .tit {
     color: rgb(0, 0, 126);
     font-weight: bold;
+    
 }
 
 .botones-card {
