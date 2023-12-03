@@ -26,11 +26,16 @@ export function NewWodCard({data, handleDelete}) {
   }
 
   const handleSelectedCard = () => {
-    setSelected(!selected)
-    setSelectedList([...selectedList, id])
-    console.log(selectedList)
-
-  }
+    setSelected(!selected);
+    if (selected) {
+      // Si ya está seleccionado, lo eliminamos de selectedList
+      setSelectedList(selectedList.filter(selectedId => selectedId !== id));
+    } else {
+      // Si no está seleccionado, lo agregamos a selectedList
+      setSelectedList([...selectedList, id]);
+    }
+    console.log(selectedList);
+  };
 
 
 

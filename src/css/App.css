@@ -215,6 +215,26 @@ button{
   height: 2rem;
 }
 
+.selected-list-container{
+
+  width: auto;
+  border: solid 1px #fff;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.selected-list-container section{
+  transform: scale(0.7)
+
+}
+
+
+
+
 
 
 
