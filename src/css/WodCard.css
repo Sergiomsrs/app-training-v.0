@@ -1,6 +1,6 @@
 .card {
     width: 16rem;
-    height: 20rem;
+    height: 24rem;
     
     background-color: rgba(239, 243, 245, 0.932);
     border-radius: 1rem;
@@ -14,7 +14,25 @@
     display:flex;
     flex-direction: column;
     align-items: center;
- 
+}
+
+.cardSelected{
+    width: 16rem;
+    height: 24rem;
+    
+    background-color: rgba(124, 160, 184, 0.932);
+    border-radius: 1rem;
+    transition-property: transform;
+    transition-duration: 300ms;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: pre-line;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
@@ -52,7 +70,7 @@
 .pru{
     
     width: 15rem;
-    height: 18rem;
+    height: 22rem;
     padding: 0px;
     overflow: scroll;
 

@@ -13,12 +13,14 @@ export const FormProvider = ({ children }) => {
   const [selectorClassDiario, setSelectorClassDiario] = useState('blue')
   const [userData, setUserData] = useState(null);
   const [idEdit, setIdEdit] = useState(null);
+  const [selectedList, setSelectedList] = useState([])
 
   return (
     <FormContext.Provider value={{
       login, handlerLogin, handlerLogout, rev, setRev, apps, setApps,selector, setSelector,
       selectorClassCrear, setSelectorClassCrear, selectorClassRevisar, setSelectorClassRevisar,
-      selectorClassDiario, setSelectorClassDiario,userData, setUserData,idEdit, setIdEdit
+      selectorClassDiario, setSelectorClassDiario,userData, setUserData,idEdit, setIdEdit,
+      selectedList, setSelectedList
 
     }}>
       {children}

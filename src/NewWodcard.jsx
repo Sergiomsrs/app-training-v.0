@@ -3,14 +3,15 @@
 import { useNavigate } from 'react-router-dom';
 import './css/WodCard.css'
 import { FormContext } from './context/FormContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 
 export function NewWodCard({data, handleDelete}) {
   
   const { bloques, id } = data; 
   const navigate = useNavigate();
-  const {setIdEdit, setApps} = useContext(FormContext)
+  const {setIdEdit, setApps, selectedList, setSelectedList} = useContext(FormContext)
+  const [selected, setSelected] = useState(false)
 
   const handleDeleteClick = () => {
     if (window.confirm('¿Estás seguro de que deseas borrar este WOD?')) {
@@ -24,12 +25,19 @@ export function NewWodCard({data, handleDelete}) {
     navigate('/editar');
   }
 
+  const handleSelectedCard = () => {
+    setSelected(!selected)
+    setSelectedList([...selectedList, id])
+    console.log(selectedList)
+
+  }
+
 
 
   return (
     <>
       <section className='wodcard-container'>
-        <article className='card'>
+        <article onClick={handleSelectedCard} className={!selected? 'card':'cardSelected'}>
           <div className='pru'>
             {bloques?.map(bloque => (
               <div key={bloque.id}>

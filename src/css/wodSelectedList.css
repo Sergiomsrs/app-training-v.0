@@ -10,10 +10,10 @@
 
 .wsl-form {
     background-color: #1a1a1a;
-    /* Fondo oscuro */
+    width: 75%;
     padding: 20px;
     border-radius: 10px;
-    width: 50%;
+    width:75%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,15 +21,12 @@
 }
 
 .wsl-form-textarea {
-    width: 100%;
-    
-    margin-bottom: 10px;
+    width: 50%;
+    margin: 0;
+    margin-right: 0.3rem;
     background-color: #333;
-    /* Gris oscuro */
     color: #fff;
-    /* Texto blanco */
     border: 1px solid #666;
-    /* Borde gris más claro */
     border-radius: 5px;
     height: 2rem;
 }
