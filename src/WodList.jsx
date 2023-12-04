@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 
 import { useContext, useEffect } from 'react';
-
+import './css/WodCardScaled.css'
 import { NewWodCard } from './NewWodcard';
 import { FormContext } from './context/FormContext';
+import { NewWodCardScaled } from './componentes/NewWodcardScaled';
 
 export const WodList = () => {
 
@@ -37,18 +38,26 @@ export const WodList = () => {
 
   return (
     <>
-      <div className='selected-list-container'>
+
+      <div className='selected-wod'>
+
+          <h1 className='h1-selected-title'>Wod Seleccionados</h1>
+          <div>
+
+        <div className='selected-list-container'>
           {userData &&
             userData
-              .filter(item => selectedList.includes(item.id))
-              .map(item => (
-                <NewWodCard
-                  key={item.id}
-                  data={item}
-                  handleDelete={handleDelete}
-                />
+            .filter(item => selectedList.includes(item.id))
+            .map(item => (
+              <NewWodCardScaled
+              key={item.id}
+              data={item}
+              handleDelete={handleDelete}
+              />
               ))}
         </div>
+              </div>
+      </div>
 
       <div className="container1">
         {userData && (

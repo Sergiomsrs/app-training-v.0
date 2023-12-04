@@ -1,0 +1,147 @@
+.selected-wod{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.h1-selected-title{
+    color: #fff;
+}
+
+.wodcard-container-scaled {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.selected-list-container {
+
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.card-scaled {
+    width: 8rem;
+    height: 12rem;
+    font-size: xx-small;
+
+    background-color: rgba(239, 243, 245, 0.932);
+    border-radius: 1rem;
+    transition-property: transform;
+    transition-duration: 300ms;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: pre-line;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardSelected-scaled {
+    width: 8rem;
+    height: 12rem;
+
+    background-color: rgba(124, 160, 184, 0.932);
+    border-radius: 1rem;
+    transition-property: transform;
+    transition-duration: 300ms;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: pre-line;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pru-scaled {
+
+    width: 8rem;
+    height: 12rem;
+    padding: 0px;
+    overflow: scroll;
+}
+
+.pru-scaled::-webkit-scrollbar {
+    display: none;
+}
+
+.tit-scaled {
+    color: rgb(0, 0, 126);
+    font-weight: bold;
+
+}
+
+.botones-card-scaled {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 10px;
+    gap: 2rem;
+    margin-bottom: 0.3rem;
+
+}
+
+.botonCard-actualizar-scaled {
+    background-color: #fda500;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.botonCard-borrar-scaled {
+    background-color: #942323;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.botonCard-actualizar-scaled:hover,
+.botonCard-borrar-scaled:hover {
+    background-color: #0d9101;
+}
+
+.row-card-scaled {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 20px;
+}
+
+.wodcard-dia-scaled {
+    color: rgb(27, 99, 255);
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wodcard-parte-scaled {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}

@@ -18,12 +18,13 @@
 }
 
 .input-rep{
-    width: 20px;
+    width: 5%;
     
 }
 
 .input-mov{
     flex: 1;
+    width: 90%;
     
 }
 
