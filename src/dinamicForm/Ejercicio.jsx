@@ -1,5 +1,6 @@
 export const Ejercicio = ({ handleInputChange, values }) => {
     const { rep = "", mov = "" } = values; 
+    
   
     return (
       <>

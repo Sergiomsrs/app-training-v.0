@@ -56,7 +56,12 @@ export const Contenedor = () => {
         ...newApps[appIndex].ejercicios[index],
         [name]: value,
       };
-      setApps(newApps);
+
+      if(newApps[appIndex].ejercicios[index].mov === "push up"){
+
+        console.log(newApps[appIndex].ejercicios[index].mov)
+        setApps(newApps);
+      }
 
     };
 
