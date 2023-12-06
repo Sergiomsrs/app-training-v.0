@@ -95,7 +95,9 @@ export const ContenedorEditar = () => {
       }
 
     return (
-      <div className="contenerdor-form">
+      <div className="contenerdor-form-edit">
+
+        <div className="form-edit">
         {apps.map((app) => (
           <div className="contenedor-block" key={app.id}>
             <Block ejercicios={app.ejercicios} 
@@ -109,9 +111,10 @@ export const ContenedorEditar = () => {
           </div>
         ))}
   
-        <div>
-          <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
+        <div className="form-edit-buton">
+          <button className='boton' type='button' onClick={handleAddApp}>Add Block</button>
           <button className='boton' type='button' onClick={handleSendClick}>Enviar</button>
+        </div>
         </div>
       </div>
 

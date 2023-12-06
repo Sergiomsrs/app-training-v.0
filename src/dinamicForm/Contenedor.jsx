@@ -3,7 +3,6 @@
 
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
-import { ultimoID } from "../funcion";
 import Block from "./Block"
 import './dinamic.css'
 import { movimientosPermitidos } from "../data/mov";
@@ -34,14 +33,12 @@ export const Contenedor = () => {
       
       try {
         // Espera a que se resuelva la promesa antes de continuar
-        const id = await ultimoID();
         fetch('http://localhost:8080/list', {
         method: 'POST', // Puedes usar GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json', // Especifica el tipo de contenido que estás enviando
         },
         body: JSON.stringify({
-          id: id + 1,
           bloques: apps,
         }) // El contenido a enviar, transformado a JSON
         

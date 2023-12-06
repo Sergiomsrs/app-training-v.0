@@ -69,3 +69,28 @@
     width: 8rem;
   }
 
+
+  .contenerdor-form-edit{
+    min-height: calc(95vh - (3rem + 2rem));
+  }
+
+  .form-edit{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-edit-buton{
+    width: 25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .form-edit-buton .boton{
+    width: 8rem;
+  }
+ 

@@ -23,4 +23,5 @@ export const movimientosPermitidos = [
     "Snatch",
     "Squat",
     "Thrusters",
+    "Wall Ball",
 ]

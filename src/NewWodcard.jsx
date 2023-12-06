@@ -41,8 +41,9 @@ export function NewWodCard({data, handleDelete}) {
   return (
     <>
       <section className='wodcard-container'>
-        <article onClick={handleSelectedCard} className={!selected? 'card':'cardSelected'}>
+        <article className={!selected? 'card':'cardSelected'}>
           <div className='pru'>
+            <div onClick={handleSelectedCard} className='selected-buton'></div>
             {bloques?.map(bloque => (
               <div key={bloque.id}>
                 <p className='wodcard-dia'>{bloque.title}</p>

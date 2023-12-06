@@ -8,7 +8,6 @@
     transition-duration: 300ms;
     text-align: center;
     justify-content: center;
-    cursor: pointer;
     white-space: pre-line;
 
     display:flex;
@@ -26,7 +25,6 @@
     transition-duration: 300ms;
     text-align: center;
     justify-content: center;
-    cursor: pointer;
     white-space: pre-line;
 
     display:flex;
@@ -148,3 +146,16 @@
     gap: 8px;
     height:20px;
 }
+
+.selected-buton{
+    background-color: #242424;
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+    top: 1rem;
+    cursor: pointer;
+    border: 1px solid #ddd; /* Agrega un borde para mayor definición */
+    border-radius: 50%; /* Hace que el botón tenga forma de círculo con esquinas redondeadas */
+    transition: box-shadow 0.3s ease; /* Agrega una transición para suavizar el cambio de la sombra */
+}
+
