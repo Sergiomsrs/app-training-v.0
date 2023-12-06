@@ -1,45 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
 import '../css/WodCardScaled.css'
-import { FormContext } from '../context/FormContext';
 
-export function NewWodCardScaled({data, handleDelete}) {
+export function NewWodCardScaled({data}) {
   
-  const { bloques, id } = data; 
-  const navigate = useNavigate();
-  const {setIdEdit, setApps, selectedList, setSelectedList} = useContext(FormContext)
-  const [selected, setSelected] = useState(false)
-
-  const handleDeleteClick = () => {
-    if (window.confirm('¿Estás seguro de que deseas borrar este WOD?')) {
-      handleDelete(id);
-    }
-  };
-
-  const handleUpdateClick = () => {
-    setIdEdit(id);
-    setApps(bloques);
-    navigate('/editar');
-  }
-
-  const handleSelectedCard = () => {
-    setSelected(!selected);
-    if (selected) {
-      // Si ya está seleccionado, lo eliminamos de selectedList
-      setSelectedList(selectedList.filter(selectedId => selectedId !== id));
-    } else {
-      // Si no está seleccionado, lo agregamos a selectedList
-      setSelectedList([...selectedList, id]);
-    }
-    console.log(selectedList);
-  };
-
-
+  const { bloques } = data; 
 
   return (
     <>
       <section className='wodcard-container-scaled'>
-        <article onClick={handleSelectedCard} className={!selected? 'card-scaled':'cardSelected-scaled'}>
+        <article className='card-scaled'>
           <div className='pru-scaled'>
             {bloques?.map(bloque => (
               <div key={bloque.id}>

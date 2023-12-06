@@ -1,3 +1,5 @@
+import {movimientosPermitidos} from "../src/data/mov"
+
 export const ultimoID = async () => {
     try {
         const response = await fetch('http://localhost:8080/list/ultimoId');
@@ -74,3 +76,27 @@ export const buscarMov = async (mov) => {
         throw error; // Puedes manejar el error o propagarlo según tus necesidades
     }
 };
+
+export const obtenerIndicesMovimientosInvalidos = (bloque) => {
+    const ejercicios = bloque.ejercicios || [];
+  
+    return ejercicios.reduce((indicesInvalidos, ejercicio, index) => {
+      if (!movimientosPermitidos.includes(ejercicio.mov)) {
+        indicesInvalidos.push(index);
+      }
+      return indicesInvalidos;
+    }, []);
+  };
+  
+  // Función para obtener los índices de movimientos no permitidos en el objeto
+ export const obtenerIndicesMovimientosInvalidosEnObjeto = (objeto) => {
+    const bloques = objeto.bloques || [];
+  
+    return bloques.reduce((indicesTotales, bloque, bloqueIndex) => {
+      const indicesInvalidos = obtenerIndicesMovimientosInvalidos(bloque);
+      if (indicesInvalidos.length > 0) {
+        indicesTotales[bloqueIndex] = indicesInvalidos;
+      }
+      return indicesTotales;
+    }, {});
+  };

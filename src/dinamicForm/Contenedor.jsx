@@ -6,14 +6,30 @@ import { FormContext } from "../context/FormContext";
 import { ultimoID } from "../funcion";
 import Block from "./Block"
 import './dinamic.css'
+import { movimientosPermitidos } from "../data/mov";
 
 
 export const Contenedor = () => {
 
   const {apps, setApps} = useContext(FormContext)
 
+  const validarMov = () =>{
+    const movimientosNoCoinciden = apps.map((item, index) => {
+      const ejerciciosConMovIncorrecto = item.ejercicios.filter(ejercicio => !movimientosPermitidos.includes(ejercicio.mov));
+      const movimientosIncorrectos = ejerciciosConMovIncorrecto.map(ejercicio => ejercicio.mov);
+      return movimientosIncorrectos.length > 0 ? { index, movimientos: movimientosIncorrectos } : null;
+    }).filter(resultado => resultado !== null);
+    return movimientosNoCoinciden;
+  }
+
 
   const enviarDatos= async () => {
+
+    const movimientosNoCoinciden = validarMov();
+
+    if (movimientosNoCoinciden.length === 0) {
+
+
     if (window.confirm('¿Estás seguro de que deseas enviar este WOD?')) {
       
       try {
@@ -44,6 +60,13 @@ export const Contenedor = () => {
     }
     setApps([{ ejercicios: [], id: 1, title: "", desc: "" }]);
   }
+} else {
+  const movimientosIncorrectos = movimientosNoCoinciden.map(item => item.movimientos.join(', ')).join(', ');
+    alert(`Hay movimientos incorrectos en el cuestionario: ${movimientosIncorrectos}. Por favor, revisa las respuestas.`);
+}
+
+
+
 }
     
     
@@ -56,12 +79,7 @@ export const Contenedor = () => {
         ...newApps[appIndex].ejercicios[index],
         [name]: value,
       };
-
-      if(newApps[appIndex].ejercicios[index].mov === "push up"){
-
-        console.log(newApps[appIndex].ejercicios[index].mov)
         setApps(newApps);
-      }
 
     };
 
@@ -99,7 +117,7 @@ export const Contenedor = () => {
       };
 
     return (
-      <div className="contenerdor-form">
+      <form className="contenerdor-form">
         {apps.map((app) => (
           <div className="contenedor-block" key={app.id}>
             <Block ejercicios={app.ejercicios} 
@@ -113,11 +131,11 @@ export const Contenedor = () => {
           </div>
         ))}
   
-        <div>
-          <button className='boton' type='button' onClick={handleAddApp}>Añadir Bloque</button>
+        <div className="botones-footer-form">
+          <button className='boton' type='button' onClick={handleAddApp}>Add Block</button>
           <button className='boton' type='button' onClick={handleResetForm}>Reset</button>
           <button className='boton' type='button' onClick={enviarDatos}>Enviar</button>
         </div>
-      </div>
+      </form>
     );
 }

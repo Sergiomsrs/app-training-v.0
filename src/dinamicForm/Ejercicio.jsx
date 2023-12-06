@@ -4,7 +4,7 @@ export const Ejercicio = ({ handleInputChange, values }) => {
   
     return (
       <>
-        <div className="exercise-row">
+        
           <input
             className="input-rep"
             type="text"
@@ -19,7 +19,7 @@ export const Ejercicio = ({ handleInputChange, values }) => {
             value={mov !== null && mov !== undefined ? mov : ''}
             onChange={handleInputChange}
           />
-        </div>
+        
       </>
     );
   };

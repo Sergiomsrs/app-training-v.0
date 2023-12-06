@@ -34,7 +34,6 @@ export function NewWodCard({data, handleDelete}) {
       // Si no está seleccionado, lo agregamos a selectedList
       setSelectedList([...selectedList, id]);
     }
-    console.log(selectedList);
   };
 
 

@@ -32,33 +32,36 @@ function Block({
     <>
       <div className='head-form'>
         <input
+          className="head-form-input"
           type="text"
           value={title}
           onChange={onTitleChange}
           placeholder="Título"
         />
         <input
+          className="head-form-input"
           type="text"
           value={desc}
           onChange={onDescChange}
           placeholder="Descripcion"
         />
       </div>
-      <form>
-        
+
+
+
       {ejercicios.map((ej, index) => {
-  const values = ej || { rep: "", mov: "" };
-  return (
-    <div key={ej.id}>
-      <Ejercicio
-        handleInputChange={(e) => handleEjercicioChange(e, index)}
-        values={values}
-      />
-    </div>
-  );
-})}
-        <button className='boton' type='button' onClick={handleClick}>+</button>
-      </form>
+        const values = ej || { rep: "", mov: "" };
+        return (
+          <div className="exercice-row" key={ej.id}>
+            <Ejercicio
+              handleInputChange={(e) => handleEjercicioChange(e, index)}
+              values={values}
+            />
+          </div>
+        );
+      })}
+      <button className='boton' type='button' onClick={handleClick}>+</button>
+
     </>
   );
 }
