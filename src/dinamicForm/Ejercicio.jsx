@@ -1,4 +1,4 @@
-export const Ejercicio = ({ handleInputChange, values }) => {
+export const Ejercicio = ({ handleInputChange, values,handleKeyPress }) => {
     const { rep = "", mov = "" } = values; 
     
   
@@ -18,6 +18,7 @@ export const Ejercicio = ({ handleInputChange, values }) => {
             name="mov"
             value={mov !== null && mov !== undefined ? mov : ''}
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
           />
         
       </>

@@ -52,8 +52,7 @@ export function NewWodCard({data, handleDelete}) {
                   <>
                     {bloque.ejercicios.map(ej => (
                       <div className='row-card' key={ej.id}>
-                        <p>{ej.rep}</p>
-                        <p>{ej.mov}</p>
+                        <p>{ej.rep + " " + ej.mov}</p>
                       </div>
                     ))}
                   </>

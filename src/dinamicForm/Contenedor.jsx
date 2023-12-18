@@ -24,9 +24,9 @@ export const Contenedor = () => {
 
   const enviarDatos= async () => {
 
-    const movimientosNoCoinciden = validarMov();
+    //const movimientosNoCoinciden = validarMov();
 
-    if (movimientosNoCoinciden.length === 0) {
+    //if (movimientosNoCoinciden.length === 0) {
 
 
     if (window.confirm('¿Estás seguro de que deseas enviar este WOD?')) {
@@ -57,10 +57,10 @@ export const Contenedor = () => {
     }
     setApps([{ ejercicios: [], id: 1, title: "", desc: "" }]);
   }
-} else {
-  const movimientosIncorrectos = movimientosNoCoinciden.map(item => item.movimientos.join(', ')).join(', ');
-    alert(`Hay movimientos incorrectos en el cuestionario: ${movimientosIncorrectos}. Por favor, revisa las respuestas.`);
-}
+//} else {
+  //const movimientosIncorrectos = movimientosNoCoinciden.map(item => item.movimientos.join(', ')).join(', ');
+    //alert(`Hay movimientos incorrectos en el cuestionario: ${movimientosIncorrectos}. Por favor, revisa las respuestas.`);
+//}
 
 
 

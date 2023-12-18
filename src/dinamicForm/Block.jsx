@@ -27,6 +27,13 @@ function Block({
     setEjercicioValues(newValues);
     handleInputChange(e, index);
   };
+  const handleKeyPress = (e) => {
+    // Verificar si la tecla presionada es el signo más (+)
+    if (e.key === 'Enter') {
+      // Llamar a la función o realizar la acción que deseas cuando se presiona el signo más
+      handleClick();
+    }
+  };
 
   return (
     <>
@@ -56,6 +63,7 @@ function Block({
             <Ejercicio
               handleInputChange={(e) => handleEjercicioChange(e, index)}
               values={values}
+              handleKeyPress={handleKeyPress}
             />
           </div>
         );

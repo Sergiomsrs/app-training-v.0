@@ -10,6 +10,8 @@ export const WodList = () => {
 
   const { userData, setUserData, selectedList } = useContext(FormContext)
 
+  
+
 
   useEffect(() => {
     fetch('http://localhost:8080/list/listar')
