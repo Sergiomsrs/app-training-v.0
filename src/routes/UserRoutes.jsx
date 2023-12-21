@@ -24,7 +24,6 @@ export const UserRoutes = ({ handlerLogout, login }) => {
         <Route path="/editar" element={<ContenedorEditar/>} />
         <Route path="/data" element={<Statistics/>} />
         <Route path="/buscador" element={<WodSelectedList/>} />
-        
       </Routes>
       
       <Footer/>
