@@ -1,10 +1,8 @@
 import { useState } from "react"
-import { useAuth } from "../auth/hooks/useAuth"
 import { FormContext } from "./FormContext"
 
 export const FormProvider = ({ children }) => {
 
-  const { login, handlerLogin, handlerLogout } = useAuth()
   const [rev, setRev] = useState([])
   const [apps, setApps] = useState([{ ejercicios: [], id: 1, title: "", desc: "" }]);
   const [selector, setSelector] = useState(1)
@@ -17,9 +15,9 @@ export const FormProvider = ({ children }) => {
 
   return (
     <FormContext.Provider value={{
-      login, handlerLogin, handlerLogout, rev, setRev, apps, setApps,selector, setSelector,
+      rev, setRev, apps, setApps, selector, setSelector,
       selectorClassCrear, setSelectorClassCrear, selectorClassRevisar, setSelectorClassRevisar,
-      selectorClassDiario, setSelectorClassDiario,userData, setUserData,idEdit, setIdEdit,
+      selectorClassDiario, setSelectorClassDiario, userData, setUserData, idEdit, setIdEdit,
       selectedList, setSelectedList
 
     }}>

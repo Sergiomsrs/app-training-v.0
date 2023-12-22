@@ -10,12 +10,12 @@ import { Footer } from "../layout/Footer"
 import { WodSelectedList } from "../componentes/WodSelectedList"
 
 
-export const UserRoutes = ({ handlerLogout, login }) => {
+export const UserRoutes = () => {
   return (
     <>
       <FormProvider>
 
-      <Navbar handlerLogout={handlerLogout} login={login} />
+      <Navbar handlerLogout={"handlerLogout"} login={"login"} />
 
       <Routes>
         <Route path="app" element={<App />} />
