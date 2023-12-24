@@ -1,12 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import '../styles/userpage.css'
 
-export const UserForm = ({handlerAddUser}) => {
+export const UserForm = ({handlerAddUser, initialUserForm, userSelected}) => {
 
-    const initialUserForm = {
-        name: '',
-        password: '',
-        email: ''
-    }
+  
 
     const [userForm, setUserForm] = useState(initialUserForm)
     
@@ -27,19 +24,25 @@ export const UserForm = ({handlerAddUser}) => {
 
     }
 
-    const {name, password, email} = userForm
+    const {name, password, email, id} = userForm
+
+    useEffect(() => {
+        setUserForm({...userSelected})
+    }, [userSelected]);
     
     
     return (
 
-        <form onSubmit={onSubmit} style={{display:"flex", flexDirection:"column", width:'400px'}}>
+        <form onSubmit={onSubmit} className="componente-form-userpage" >
             <input 
+            className="input-userpage"
             placeholder="Name"
             name="name"
             value={name}
             onChange={onImputChange}
             />
             <input 
+            className="input-userpage"
             placeholder="Password"
             name="password"
             value={password}
@@ -47,13 +50,15 @@ export const UserForm = ({handlerAddUser}) => {
             onChange={onImputChange}
             />
             <input 
+            className="input-userpage"
             placeholder="Email"
             name="email"
             value={email}
             onChange={onImputChange}
             />
-            <button type="submit" > 
-            Crear
+            <input type="hidden" name="id" value={id} />
+            <button type="submit" className="boton-guardar-userpage" > 
+            {id === 0 ? 'Crear' : 'Editar'}
             </button> 
             
         </form>
