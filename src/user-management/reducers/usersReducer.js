@@ -15,7 +15,10 @@ export const userReducer = (state = [], action) => {
         case 'UPDATE_USER':
             return state.map(user => {
                 if (user.id === action.payload.id) {
-                    return {...action.payload};
+                    return {
+                        ...action.payload,
+                        password: user.password
+                    };
                 }
                 return user;
             });

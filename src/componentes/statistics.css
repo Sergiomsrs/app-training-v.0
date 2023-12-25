@@ -1,23 +1,59 @@
 .sts-body{
     background-color: #1a1a1a;
-    color: #fff;
+    color: #000000;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    min-height: calc(100vh - (3rem + 3rem));
+    min-height: calc(100vh - (3rem + 2rem));
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+  
 }
 
-
-
-.sts-card{
+  
+  .sts-card {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 20% 60%;
+    height: min-content;
+  }
+  
+  .sts-card h1 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .sts-card h2 {
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .sts-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2; /* Ajusta el número de columnas según sea necesario */
+    column-gap: 20px; /* Espaciado entre columnas */
+  }
+  
+  .sts-card li {
     background-color: #fff;
-    height: auto;
-    width: 30rem;
-    border-radius: 5%;
-    color: black;
-    margin-left: 5rem;
-    margin-top: 5rem;
-    padding: 1rem;
-}
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 8px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sts-card li:hover {
+    background-color: #f0f0f0;
+  }
+  

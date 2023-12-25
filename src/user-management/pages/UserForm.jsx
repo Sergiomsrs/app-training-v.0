@@ -1,21 +1,33 @@
 import { useEffect, useState } from "react"
 import '../styles/userpage.css'
+import Swal from "sweetalert2"
 
-export const UserForm = ({handlerAddUser, initialUserForm, userSelected}) => {
+export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handlerCloseForm }) => {
 
-  
+
 
     const [userForm, setUserForm] = useState(initialUserForm)
-    
+
     const onImputChange = (event) => {
-        const {name, value} = event.target
-        setUserForm({...userForm, [name]: value})
+        const { name, value } = event.target
+        setUserForm({ ...userForm, [name]: value })
+    }
+
+    const onCLoseForm = () => {
+        handlerCloseForm()
+        setUserForm(initialUserForm)
     }
 
     const onSubmit = (event) => {
         event.preventDefault()
-        if(!userForm.name || !userForm.password || !userForm.email) {
-            alert('Faltan datos')
+        if (!userForm.name || (!userForm.password && userForm.id === 0) || !userForm.email) {
+            Swal.fire({
+                title: "Error de Validación",
+                text: "Debe completar todos los campos",
+                icon: "error",
+                background: "#3a3838",
+                color: "#fff"
+            });
             return
         }
 
@@ -24,43 +36,58 @@ export const UserForm = ({handlerAddUser, initialUserForm, userSelected}) => {
 
     }
 
-    const {name, password, email, id} = userForm
+    const { name, password, email, id } = userForm
 
     useEffect(() => {
-        setUserForm({...userSelected})
+        setUserForm({
+            ...userSelected,
+            password: ''
+        })
     }, [userSelected]);
-    
-    
+
+
     return (
 
-        <form onSubmit={onSubmit} className="componente-form-userpage" >
-            <input 
-            className="input-userpage"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={onImputChange}
+        <form className="componente-form-userpage" >
+            <input
+                className="input-userpage"
+                placeholder="Name"
+                name="name"
+                value={name}
+                onChange={onImputChange}
             />
-            <input 
-            className="input-userpage"
-            placeholder="Password"
-            name="password"
-            value={password}
-            type="password"
-            onChange={onImputChange}
-            />
-            <input 
-            className="input-userpage"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={onImputChange}
+            {id > 0 ||
+                <input
+                    className="input-userpage"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    type="password"
+                    onChange={onImputChange}
+                />}
+
+            <input
+                className="input-userpage"
+                placeholder="Email"
+                name="email"
+                value={email}
+                onChange={onImputChange}
             />
             <input type="hidden" name="id" value={id} />
-            <button type="submit" className="boton-guardar-userpage" > 
-            {id === 0 ? 'Crear' : 'Editar'}
-            </button> 
-            
+            <div className="button-user-container">
+
+                <button onClick={onSubmit} className="boton-guardar-userpage" >
+                    {id === 0 ? 'Crear' : 'Confirmar'}
+                </button>
+
+                <button type="button"
+                    onClick={() => onCLoseForm()}
+                    className="boton-guardar-userpage">
+                    Cerrar
+                </button>
+            </div>
+
+
         </form>
 
     )
