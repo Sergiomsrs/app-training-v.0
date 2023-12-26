@@ -1,7 +1,7 @@
 import { UserForm } from "./UserForm"
 import { UserList } from "./UserList"
 import '../styles/userpage.css'
-import { useUsers } from "../../hooks/useUsers"
+import { useUsers } from "../hooks/useUsers"
 
 
 export const Users = () => {

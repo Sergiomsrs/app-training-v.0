@@ -11,12 +11,12 @@ import { WodSelectedList } from "../componentes/WodSelectedList"
 import { Users } from "../user-management/pages/Users"
 
 
-export const UserRoutes = () => {
+export const UserRoutes = ({handlerLogout, login}) => {
   return (
     <>
       <FormProvider>
 
-      <Navbar handlerLogout={"handlerLogout"} login={"login"} />
+      <Navbar handlerLogout={handlerLogout} login={login} />
 
       <Routes>
         <Route path="app" element={<App />} />

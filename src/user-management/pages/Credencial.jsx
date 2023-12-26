@@ -1,11 +1,27 @@
 import { LoginPage } from "../auth/LoginPage"
+import { UsersApp } from "../../layout/UsersApp"
+import { useAuth } from "../hooks/useAuth"
+
+
 
 export const Credencial = () => {
-// en main vamos a entrar a credencial y dentro de credencias entraremos segun este autenticado o no a 
-// a userapp o a login.
+
+const {login, handlerLogin, handlerLogout} = useAuth()
+    
+
     return (
 
-        <LoginPage/>
+        <>
+        {
+            login.isAuth? 
+            <UsersApp 
+            handlerLogout={handlerLogout}
+            login={login}
+            /> :
+            <LoginPage handlerLogin={handlerLogin}/>
+        }
+    
+        </>
 
         )
 }

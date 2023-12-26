@@ -1,6 +1,7 @@
 import { useReducer, useState } from "react"
-import { userReducer } from "../user-management/reducers/usersReducer"
+
 import Swal from "sweetalert2"
+import { userReducer } from "../reducers/usersReducer"
 
 const initialUsers = [
     {

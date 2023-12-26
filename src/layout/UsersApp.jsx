@@ -3,16 +3,16 @@
 import { Route, Routes } from "react-router"
 import { UserRoutes } from "../routes/UserRoutes"
 
-export const UsersApp = () => {
-
-    const login = {}
-    const handlerLogout = () => {}
-
+export const UsersApp = ({handlerLogout, login}) => {
 
 
     return (
         <Routes>
-            <Route path="/*" element={<UserRoutes login={login} handlerLogout={handlerLogout} />} />
+            <Route path="/*" element={
+            <UserRoutes 
+            login={login} 
+            handlerLogout={handlerLogout} 
+            />} />
         </Routes>
     )
 }

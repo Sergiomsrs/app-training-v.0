@@ -1,16 +1,15 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
+const initialLoginForm = {
+    username: '',
+    password: '',
+}
+
+
 export const LoginPage = ({handlerLogin}) => {
 
 
-
-
-
-    const initialLoginForm = {
-        username: '',
-        password: '',
-    }
     const [loginForm, setLoginForm] = useState(initialLoginForm);
     const { username, password } = loginForm
     
@@ -30,10 +29,8 @@ export const LoginPage = ({handlerLogin}) => {
 
         // implementacion del login
 
-        handlerLogin({
-            username, password
-        })
-
+        handlerLogin({username, password})
+    
     
 
         setLoginForm(initialLoginForm)
