@@ -3,6 +3,7 @@ import { useReducer } from "react"
 import Swal from "sweetalert2"
 import { loginReducer } from "../reducers/loginReducer"
 import { loginUser } from "../services/authService"
+import { useNavigate } from "react-router-dom"
 
 const initialLogin= JSON.parse(sessionStorage.getItem('login')) || {
     isAuth: false,
@@ -12,7 +13,7 @@ const initialLogin= JSON.parse(sessionStorage.getItem('login')) || {
 export const useAuth = () => {
 
     const [login, dispatch] = useReducer(loginReducer, initialLogin)
-
+    const navigate = useNavigate()
     const handlerLogin = ({username, password}) => {
         const isLogin = loginUser({username, password})
 
@@ -28,6 +29,7 @@ export const useAuth = () => {
                 isAuth: true, 
                 user,
             }))
+            navigate('/app')
         } else {
             Swal.fire('Error de validacion', 'Username o password incorrectos', 'error')
         }

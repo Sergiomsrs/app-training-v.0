@@ -22,7 +22,11 @@ export const userReducer = (state = [], action) => {
                 }
                 return user;
             });
-        default:
+
+        case 'LOADING_USERS':
+            return action.payload;
+        
+            default:
             return state;
     }
 }

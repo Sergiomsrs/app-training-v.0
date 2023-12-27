@@ -9,14 +9,14 @@ export const UserRow = ({ user, handlerDeleteUser, handlerUpdateUser }) => {
 
         <tr key={user.id}>
             <td>{user.id}</td>
-            <td>{user.name}</td>
+            <td>{user.username}</td>
             <td>{user.email}</td>
             <td><button
                 className='user-table-updatebutton'
                 onClick={() => handlerUpdateUser(
                     {
                         id: user.id,
-                        name: user.name,
+                        name: user.username,
                         email: user.email
                     }
                 )}>update</button></td>

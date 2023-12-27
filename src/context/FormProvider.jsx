@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FormContext } from "./FormContext"
+import { useUsers } from "../user-management/hooks/useUsers";
 
 export const FormProvider = ({ children }) => {
 
@@ -12,13 +13,14 @@ export const FormProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [idEdit, setIdEdit] = useState(null);
   const [selectedList, setSelectedList] = useState([])
+  const {users, getUsers} = useUsers()
 
   return (
     <FormContext.Provider value={{
       rev, setRev, apps, setApps, selector, setSelector,
       selectorClassCrear, setSelectorClassCrear, selectorClassRevisar, setSelectorClassRevisar,
       selectorClassDiario, setSelectorClassDiario, userData, setUserData, idEdit, setIdEdit,
-      selectedList, setSelectedList
+      selectedList, setSelectedList, users, getUsers
 
     }}>
       {children}

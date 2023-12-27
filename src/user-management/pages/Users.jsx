@@ -2,12 +2,15 @@ import { UserForm } from "./UserForm"
 import { UserList } from "./UserList"
 import '../styles/userpage.css'
 import { useUsers } from "../hooks/useUsers"
+import { useContext, useEffect } from "react"
+import { FormContext } from "../../context/FormContext"
 
 
 export const Users = () => {
 
+  const {users, getUsers} = useContext(FormContext) 
+
 const {
-  users,
   userSelected,
   initialUserForm,
   visible,
@@ -15,8 +18,13 @@ const {
   handlerDeleteUser,
   handlerUpdateUser,
   handlerOpenForm,
-  handlerCloseForm
+  handlerCloseForm,
 } = useUsers()
+
+useEffect(() => {
+  getUsers()
+}, [])
+
 
 
 
