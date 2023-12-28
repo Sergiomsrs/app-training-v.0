@@ -20,7 +20,7 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
 
     const onSubmit = (event) => {
         event.preventDefault()
-        if (!userForm.name || (!userForm.password && userForm.id === 0) || !userForm.email) {
+        if (!userForm.username || (!userForm.password && userForm.id === 0) || !userForm.email) {
             Swal.fire({
                 title: "Error de Validación",
                 text: "Debe completar todos los campos",
@@ -36,7 +36,7 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
 
     }
 
-    const { name, password, email, id } = userForm
+    const { username, password, email, id } = userForm
 
     useEffect(() => {
         setUserForm({
@@ -52,8 +52,8 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
             <input
                 className="input-userpage"
                 placeholder="Name"
-                name="name"
-                value={name}
+                name="username"
+                value={username}
                 onChange={onImputChange}
             />
             {id > 0 ||
