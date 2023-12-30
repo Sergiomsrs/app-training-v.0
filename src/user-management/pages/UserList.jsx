@@ -2,6 +2,9 @@ import { UserRow } from "./UserRow"
 import '../styles/userpage.css'
 
 export const UserList = ({handlerDeleteUser, users, handlerUpdateUser}) => {
+
+
+
   return (
 
     <table className="user-table">

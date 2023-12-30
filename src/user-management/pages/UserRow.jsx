@@ -16,7 +16,7 @@ export const UserRow = ({ user, handlerDeleteUser, handlerUpdateUser }) => {
                 onClick={() => handlerUpdateUser(
                     {
                         id: user.id,
-                        name: user.username,
+                        username: user.username,
                         email: user.email
                     }
                 )}>update</button></td>

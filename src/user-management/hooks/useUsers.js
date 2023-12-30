@@ -116,7 +116,7 @@ export const useUsers = () => {
     }
 
     const handlerUpdateUser = (user) => {
-        console.log(user)
+        setErrors(initialerrors)
         setUserSelected({ ...user })
         setVisible(true)
     }
