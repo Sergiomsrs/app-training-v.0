@@ -24,7 +24,7 @@ const {
 
 useEffect(() => {
   getUsers()
-}, [users])
+}, [])
 
 
 
