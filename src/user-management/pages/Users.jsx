@@ -14,6 +14,7 @@ const {
   userSelected,
   initialUserForm,
   visible,
+  errors,
   handlerAddUser,
   handlerDeleteUser,
   handlerUpdateUser,
@@ -39,6 +40,7 @@ useEffect(() => {
             initialUserForm={initialUserForm}
             userSelected={userSelected}
             handlerCloseForm={handlerCloseForm}
+            errors={errors}
           />}
         </div>
         <div>

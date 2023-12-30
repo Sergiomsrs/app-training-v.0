@@ -1,16 +1,23 @@
 import { useReducer, useState } from "react"
-
 import Swal from "sweetalert2"
 import { userReducer } from "../reducers/usersReducer"
 import { findAll, remove, save, update } from "../services/userService"
+import { useNavigate } from "react-router-dom"
+
 
 const initialUsers = []
 
 const initialUserForm = {
-    name: '',
+    username: '',
     password: '',
     email: '',
     id: 0
+}
+
+const initialerrors = {
+    username: '',
+    password: '',
+    email: '',
 }
 
 
@@ -20,6 +27,9 @@ export const useUsers = () => {
     const [users, dispatch] = useReducer(userReducer, initialUsers)
     const [userSelected, setUserSelected] = useState(initialUserForm)
     const [visible, setVisible] = useState(false)
+    const [errors, setErrors] = useState(initialerrors)
+    
+    const navigate = useNavigate();
 
     const getUsers = async () => {
         const result = await findAll();
@@ -27,29 +37,52 @@ export const useUsers = () => {
     }
 
     const handlerAddUser = async (user) => {
-        
+
         let response;
-        
-        if(user.id === 0){
-           response = await save(user)
-        } else {
-            response = await update(user)
+        try {
+
+            if (user.id === 0) {
+                response = await save(user);
+            } else {
+                response = await update(user);
+            }
+
+            dispatch({
+                type: (user.id === 0) ? 'addUser' : 'updateUser',
+                payload: response.data,
+            });
+
+            Swal.fire(
+                (user.id === 0) ?
+                    'Usuario Creado' :
+                    'Usuario Actualizado',
+                (user.id === 0) ?
+                    'El usuario ha sido creado con exito!' :
+                    'El usuario ha sido actualizado con exito!',
+                'success'
+            );
+            handlerCloseForm();
+            navigate('/users');
+        } catch (error) {
+            if (error.response && error.response.status == 400) {
+                setErrors(error.response.data);
+            } else if (error.response && error.response.status == 500 &&
+                error.response.data?.message?.includes('constraint')) {
+            
+                if (error.response.data?.message?.includes('UK_username')) {
+                    setErrors({username: 'El username ya existe!'})
+                }
+                if (error.response.data?.message?.includes('UK_email')) {
+                    setErrors({email: 'El email ya existe!'})
+                }
+                
+            } else {
+                throw error;
+            }
         }
-
-        dispatch({
-            type: (user.id === 0) ? 'ADD_USER' : 'UPDATE_USER',
-            payload: response.data
-        })
-
-        Swal.fire({
-            title: (user.id === 0) ? "Usuario Creado" : "Usuario Actualizado",
-            text: (user.id === 0) ? "El usuario se ha creado correctamente" : "El usuario se ha actualizado correctamente",
-            icon: "success",
-            background: "#3a3838",
-            color: "#fff"
-        });
         
-        handlerCloseForm()
+        
+        
 
     }
 
@@ -95,6 +128,7 @@ export const useUsers = () => {
     const handlerCloseForm = () => {
         setVisible(false)
         setUserSelected(initialUserForm)
+        
     }
 
 
@@ -103,6 +137,7 @@ export const useUsers = () => {
         userSelected,
         initialUserForm,
         visible,
+        errors,
         handlerAddUser,
         handlerDeleteUser,
         handlerUpdateUser,

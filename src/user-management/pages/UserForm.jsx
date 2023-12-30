@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react"
 import '../styles/userpage.css'
-import Swal from "sweetalert2"
 
-export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handlerCloseForm }) => {
-
-
-
+export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handlerCloseForm, errors }) => {
+    
+    
+    
     const [userForm, setUserForm] = useState(initialUserForm)
+    const { username, password, email, id } = userForm
+    
+
+    useEffect(() => {
+        setUserForm({
+            ...userSelected,
+            password: ''
+        })
+    }, [userSelected]);
 
     const onImputChange = (event) => {
         const { name, value } = event.target
@@ -19,32 +27,9 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
     }
 
     const onSubmit = (event) => {
-        event.preventDefault()
-        if (!userForm.username || (!userForm.password && userForm.id === 0) || !userForm.email) {
-            Swal.fire({
-                title: "Error de Validación",
-                text: "Debe completar todos los campos",
-                icon: "error",
-                background: "#3a3838",
-                color: "#fff"
-            });
-            return
-        }
-
+        event.preventDefault()  
         handlerAddUser(userForm)
-        setUserForm(initialUserForm)
-
     }
-
-    const { username, password, email, id } = userForm
-
-    useEffect(() => {
-        setUserForm({
-            ...userSelected,
-            password: ''
-        })
-    }, [userSelected]);
-
 
     return (
 
@@ -55,7 +40,9 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                 name="username"
                 value={username}
                 onChange={onImputChange}
+                
             />
+            <p>{errors?.username}</p>
             {id > 0 ||
                 <input
                     className="input-userpage"
@@ -65,6 +52,7 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                     type="password"
                     onChange={onImputChange}
                 />}
+                <p>{errors?.password}</p>
 
             <input
                 className="input-userpage"
@@ -73,6 +61,7 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                 value={email}
                 onChange={onImputChange}
             />
+            <p>{errors?.email}</p>
             <input type="hidden" name="id" value={id} />
             <div className="button-user-container">
 
