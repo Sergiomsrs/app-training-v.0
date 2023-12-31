@@ -11,26 +11,40 @@ import { WodSelectedList } from "../componentes/WodSelectedList"
 import { Users } from "../user-management/pages/Users"
 
 
-export const UserRoutes = ({handlerLogout, login}) => {
+export const UserRoutes = ({ handlerLogout, login }) => {
   return (
     <>
       <FormProvider>
 
-      <Navbar handlerLogout={handlerLogout} login={login} />
+        <Navbar handlerLogout={handlerLogout} login={login} />
 
-      <Routes>
-        <Route path="app" element={<App />} />
-        <Route path="/" element={<Navigate to={"/app"} />} />
-        <Route path="/Blog" element={<Blog/>} />
-        <Route path="/editar" element={<ContenedorEditar/>} />
-        <Route path="/data" element={<Statistics/>} />
-        <Route path="/buscador" element={<WodSelectedList/>} />
-        <Route path="/users" element={<Users/>} />
+        <Routes>
+          {
+            login.isAdmin ? (
+              <>
+                <Route path="app" element={<App />} />
+                <Route path="/" element={<Navigate to={"/app"} />} />
+                <Route path="/Blog" element={<Blog />} />
+                <Route path="/editar" element={<ContenedorEditar />} />
+                <Route path="/data" element={<Statistics />} />
+                <Route path="/buscador" element={<WodSelectedList />} />
+                <Route path="/users" element={<Users />} />
+              </>
+            )
+              :
+              <>
+                <Route path="/" element={<Navigate to={"/Blog"} />} />
+                <Route path="/Blog" element={<Blog />} />
+                <Route path="*" element={<Navigate to={"/Blog"} replace />} />
+              </>
 
-      </Routes>
-      
-      <Footer/>
-      
+          }
+
+
+        </Routes>
+
+        <Footer />
+
       </FormProvider>
     </>
   )

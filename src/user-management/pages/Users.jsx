@@ -42,15 +42,15 @@ useEffect(() => {
             handlerCloseForm={handlerCloseForm}
             errors={errors}
           />}
-        </div>
-        <div>
-        {visible ||
+          {visible ||
           <button 
           className="boton-guardar-userpage"
           onClick={handlerOpenForm}
           >
             Nuevo Usuario
           </button>}
+        </div>
+        <div>
           {users.length === 0 ? <p>No hay usuarios en el sistema</p> :
             <UserList
               users={users}
