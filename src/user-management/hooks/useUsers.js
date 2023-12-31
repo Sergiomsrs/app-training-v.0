@@ -3,6 +3,7 @@ import Swal from "sweetalert2"
 import { userReducer } from "../reducers/usersReducer"
 import { findAll, remove, save, update } from "../services/userService"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "./useAuth"
 
 
 const initialUsers = []
@@ -28,7 +29,8 @@ export const useUsers = () => {
     const [userSelected, setUserSelected] = useState(initialUserForm)
     const [visible, setVisible] = useState(false)
     const [errors, setErrors] = useState(initialerrors)
-    
+    const { handlerLogout } = useAuth()
+
     const navigate = useNavigate();
 
     const getUsers = async () => {
@@ -68,21 +70,23 @@ export const useUsers = () => {
                 setErrors(error.response.data);
             } else if (error.response && error.response.status == 500 &&
                 error.response.data?.message?.includes('constraint')) {
-            
+
                 if (error.response.data?.message?.includes('UK_username')) {
-                    setErrors({username: 'El username ya existe!'})
+                    setErrors({ username: 'El username ya existe!' })
                 }
                 if (error.response.data?.message?.includes('UK_email')) {
-                    setErrors({email: 'El email ya existe!'})
+                    setErrors({ email: 'El email ya existe!' })
                 }
-                
+            } else if (error.response?.status == 401) {
+                handlerLogout();
+
             } else {
                 throw error;
             }
         }
-        
-        
-        
+
+
+
 
     }
 
@@ -98,21 +102,30 @@ export const useUsers = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Si, eliminar!"
-        }).then((result) => {
+        }).then( async (result) => {
             if (result.isConfirmed) {
-
-              remove(id);  
-
-                dispatch({ type: 'DELETE_USER', payload: id });
-                Swal.fire({
-                    title: "Eliminado!",
-                    text: "El usuario ha sido eliminado con exito.",
-                    icon: "success",
-                    background: "#3a3838",
-                    color: "#fff"
-                });
+                try {
+                    await remove(id);
+        
+                    dispatch({
+                        type: 'DELETE_USER',
+                        payload: id
+                    });
+                    Swal.fire({
+                        title: "Eliminado!",
+                        text: "El usuario ha sido eliminado con exito.",
+                        icon: "success",
+                        background: "#3a3838",
+                        color: "#fff"
+                    });
+                } catch (error) {
+                    if (error.response?.status == 401) {
+                        handlerLogout();
+                    } 
+                }
             }
         });
+
     }
 
     const handlerUpdateUser = (user) => {
@@ -128,7 +141,7 @@ export const useUsers = () => {
     const handlerCloseForm = () => {
         setVisible(false)
         setUserSelected(initialUserForm)
-        
+
     }
 
 

@@ -61,6 +61,7 @@ export const useAuth = () => {
         sessionStorage.removeItem('login')
         sessionStorage.removeItem('token')
         sessionStorage.clear()
+        console.log('logout')
     }
 
     return {
