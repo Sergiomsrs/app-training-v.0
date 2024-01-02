@@ -12,7 +12,8 @@ const initialUserForm = {
     username: '',
     password: '',
     email: '',
-    id: 0
+    id: 0,
+    admin: false,
 }
 
 const initialerrors = {

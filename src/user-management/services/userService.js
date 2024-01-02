@@ -25,20 +25,20 @@ export const findAll = async () => {
 // los objetos se pueden declarar asi por que el nombre y el argumento son iguales. 
 //{id:id} se puede simplificar a {id}
 
-export const save = async ({ username, email, password }) => {
+export const save = async ({ username, email, password, admin }) => {
     // eslint-disable-next-line no-useless-catch
     try {
-        const response = await axios.post(BASE_URL, { username, email, password }, config())
+        const response = await axios.post(BASE_URL, { username, email, password, admin }, config())
         return response;
     } catch (error) {
         throw error;
     }
 }
 
-export const update = async ({ id, username, email }) => {
+export const update = async ({ id, username, email, admin }) => {
     // eslint-disable-next-line no-useless-catch
     try {
-        const response = await axios.put(`${BASE_URL}/${id}`, { username, email }, config())
+        const response = await axios.put(`${BASE_URL}/${id}`, { username, email, admin }, config())
         return response;
     } catch (error) {
         throw error;

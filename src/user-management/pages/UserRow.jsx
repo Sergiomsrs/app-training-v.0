@@ -17,7 +17,8 @@ export const UserRow = ({ user, handlerDeleteUser, handlerUpdateUser }) => {
                     {
                         id: user.id,
                         username: user.username,
-                        email: user.email
+                        email: user.email,
+                        admin: user.admin
                     }
                 )}>update</button></td>
             <td><button 
