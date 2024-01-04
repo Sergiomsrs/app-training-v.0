@@ -15,6 +15,18 @@ export const findAll = async () => {
     
 }
 
+export const findAllPage = async (page=0) => {
+
+    try {
+        const response = await usersApi.get(`${BASE_URL}/page/${page}`)
+        return response;
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+    
+}
+
 // los objetos se pueden declarar asi por que el nombre y el argumento son iguales. 
 //{id:id} se puede simplificar a {id}
 

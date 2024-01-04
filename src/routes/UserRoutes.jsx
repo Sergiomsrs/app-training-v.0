@@ -29,6 +29,7 @@ export const UserRoutes = ({ handlerLogout, login }) => {
                 <Route path="/data" element={<Statistics />} />
                 <Route path="/buscador" element={<WodSelectedList />} />
                 <Route path="/users" element={<Users />} />
+                <Route path="/users/page/:page" element={<Users />} />
               </>
             )
               :

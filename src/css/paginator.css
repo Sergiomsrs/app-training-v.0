@@ -1,0 +1,48 @@
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+  }
+  
+  .page-link {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Estilos específicos para los iconos dentro de los enlaces */
+  .page-link svg {
+    margin-bottom: 3px;
+  }
+  
+  /* Estilos para los enlaces a páginas anterior/siguiente y extremos */
+  .page-item:first-child .page-link svg,
+  .page-item:last-child .page-link svg {
+    margin-bottom: 0;
+  }
+  
+  /* Estilo para el espacio entre los iconos y el texto del enlace */
+  .page-link svg + span {
+    margin-left: 5px;
+  }
+  

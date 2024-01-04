@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react"
 import Swal from "sweetalert2"
 import { userReducer } from "../reducers/usersReducer"
-import { findAll, remove, save, update } from "../services/userService"
+import { findAllPage, remove, save, update } from "../services/userService"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "./useAuth"
 
@@ -25,7 +25,7 @@ const initialerrors = {
 
 
 export const useUsers = () => {
-
+    
     const [users, dispatch] = useReducer(userReducer, initialUsers)
     const [userSelected, setUserSelected] = useState(initialUserForm)
     const [visible, setVisible] = useState(false)
@@ -34,9 +34,9 @@ export const useUsers = () => {
 
     const navigate = useNavigate();
 
-    const getUsers = async () => {
+    const getUsers = async (page = 0) => {
         try {
-            const result = await findAll();
+            const result = await findAllPage(page);
             dispatch({ type: 'LOADING_USERS', payload: result.data, })
         } catch (error) {
             if (error.response?.status == 401) {

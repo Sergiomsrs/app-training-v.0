@@ -3,6 +3,7 @@ import '../styles/userpage.css'
 
 export const UserList = ({handlerDeleteUser, users, handlerUpdateUser}) => {
 
+    
 
 
   return (
@@ -18,7 +19,7 @@ export const UserList = ({handlerDeleteUser, users, handlerUpdateUser}) => {
             </tr>
         </thead>
         <tbody>
-            {users.map((user) => (
+            {users.content.map((user) => (
                 <UserRow key={user.id}
                 user={user} 
                 handlerDeleteUser={handlerDeleteUser}
@@ -26,6 +27,7 @@ export const UserList = ({handlerDeleteUser, users, handlerUpdateUser}) => {
                 />
             ))}
         </tbody>
+       
 
     </table>
   
