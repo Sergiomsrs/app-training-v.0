@@ -55,7 +55,6 @@ export const UserForm = ({ handlerAddUser, initialUserForm, userSelected, handle
                     placeholder="Password"
                     name="password"
                     value={password}
-                    type="password"
                     onChange={onImputChange}
                 />}
                 <p>{errors?.password}</p>

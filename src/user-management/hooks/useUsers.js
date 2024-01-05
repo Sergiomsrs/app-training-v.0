@@ -72,6 +72,7 @@ export const useUsers = () => {
             );
             handlerCloseForm();
             navigate('/users');
+            
         } catch (error) {
             if (error.response && error.response.status == 400) {
                 setErrors(error.response.data);
@@ -139,6 +140,7 @@ export const useUsers = () => {
         setErrors(initialerrors)
         setUserSelected({ ...user })
         setVisible(true)
+        
     }
 
     const handlerOpenForm = () => {
