@@ -51,9 +51,50 @@
 
 .wsl-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     align-items: center;
 }
+
+.no-result-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.no-result-container p{
+    color: #fff;
+}
+
+.p-no-result{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.sts-card-busqueda{
+    width: 75%;
+}
+
+
+
+.movimientos-container-busqueda {
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: space-around;
+  }
+  
+  .movimiento-item-busqueda {
+    margin: 5px;
+    padding: 5px;
+    background-color: transparent; /* Sin fondo */
+    color: white; /* Letra blanca */
+   
+  }
