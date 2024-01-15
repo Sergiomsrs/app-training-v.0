@@ -4,6 +4,7 @@
     border-radius: 10px;
     margin-bottom: 10px;
     width: 25rem;
+    position: relative;
 }
 
 .head-form{
@@ -94,3 +95,14 @@
     width: 8rem;
   }
  
+  .boton-eliminar-block{
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+  }
+
+  .button-delete-row{
+    border: none;
+    background-color: transparent;
+    font-size: large;
+  }

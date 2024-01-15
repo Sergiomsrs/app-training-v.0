@@ -8,7 +8,8 @@ function Block({
   title,
   onTitleChange,
   desc,
-  onDescChange
+  onDescChange,
+  handleDeleteRow,
 }) {
   // Estado local para retener los valores de rep y mov
   const [ejercicioValues, setEjercicioValues] = useState([]);
@@ -65,6 +66,7 @@ function Block({
               values={values}
               handleKeyPress={handleKeyPress}
             />
+            <button type="button" className="button-delete-row" onClick={()=>handleDeleteRow(index)}>-</button>
           </div>
         );
       })}

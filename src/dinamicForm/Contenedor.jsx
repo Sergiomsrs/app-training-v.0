@@ -5,14 +5,14 @@ import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
 import Block from "./Block"
 import './dinamic.css'
-import { movimientosPermitidos } from "../data/mov";
+//import { movimientosPermitidos } from "../data/mov";
 
 
 export const Contenedor = () => {
 
   const {apps, setApps} = useContext(FormContext)
 
-  const validarMov = () =>{
+ /* const validarMov = () =>{
     const movimientosNoCoinciden = apps.map((item, index) => {
       const ejerciciosConMovIncorrecto = item.ejercicios.filter(ejercicio => !movimientosPermitidos.includes(ejercicio.mov));
       const movimientosIncorrectos = ejerciciosConMovIncorrecto.map(ejercicio => ejercicio.mov);
@@ -20,7 +20,7 @@ export const Contenedor = () => {
     }).filter(resultado => resultado !== null);
     return movimientosNoCoinciden;
   }
-
+*/
 
   const enviarDatos= async () => {
 
@@ -113,13 +113,30 @@ export const Contenedor = () => {
         setApps(newApps);
       };
 
+      const handleDeleteRow = (appId, index) => {
+        const newApps = [...apps];
+        const BlockIndex = newApps.findIndex(app => app.id === appId);
+        newApps[BlockIndex].ejercicios.splice(index, 1);
+        setApps(newApps);
+      };
+
+      const handleDeleteBlock = (appId) => {
+        const newApps = [...apps];
+        const BlockIndex = newApps.findIndex(app => app.id === appId);
+        newApps.splice(BlockIndex, 1);
+        setApps(newApps);
+
+      }
+
     return (
       <form className="contenerdor-form">
         {apps.map((app) => (
           <div className="contenedor-block" key={app.id}>
+            <button className='boton boton-eliminar-block' type='button' onClick={()=>handleDeleteBlock(app.id)}>-</button>
             <Block ejercicios={app.ejercicios} 
             handleInputChange={(e, index) => handleInputChange(e, app.id, index)} 
             handleClick={() => handleClick(app.id)} 
+            handleDeleteRow={(index) => handleDeleteRow(app.id, index)}
             onTitleChange={(e) => handleTitleChange(e, app.id)}
             onDescChange={(e) => handleDescChange(e, app.id)}
             title={app.title} 
