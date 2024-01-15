@@ -44,6 +44,7 @@ export const WodList = () => {
       <div className='selected-wod'>
 
           <h1 className='h1-selected-title'>Wod Seleccionados</h1>
+          {selectedList.length === 0 && <h5 className='h1-selected-title'>No hay wods seleccionados</h5>}
           <div>
 
         <div className='selected-list-container'>
