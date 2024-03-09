@@ -1,5 +1,3 @@
-# cambios para acceder sin backend
+# App Training
 
-En UserRoutes añadido simbolo de exclamacion  --!--login.isAdmin ? 
-
-En credencial se a comentado dos lineas de codigo y se ha agregado una linea de codigo.
+App Training es una app elaborada por Sergiomsrs, que utiliza algunos bloques de código pertenecientes a los diferentes cursos de formación realizados en los últimos años, con el objetivo de aplicar los conocimientos adquiridos más allá de los entornos de prueba de los propios cursos.
