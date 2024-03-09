@@ -36,6 +36,10 @@ export const Statistics = () => {
     return (
         <div className='sts-body'>
 
+          <section className='statistics'>
+
+
+          <div className='sts-grid' > 
 
             <div className='sts-card'>
                <h1>Numero de Wods Registrados</h1>
@@ -43,15 +47,25 @@ export const Statistics = () => {
                <h1>Movimiento Mas Repetido</h1>
                <h2>{dataSts.movimientoMasRepetido}</h2>
             </div>
+            <div className='sts-card'>
+               <h1>Trabajo tren superior</h1>
+               <h2>60%</h2>
+               <h1>Trabajo tren inferior</h1>
+               <h2>40%</h2>
+            </div>
+          </div>
+            
 
             <div className='sts-card'> 
                 <h1>Lista de Movimientos</h1>
                 <ul>
         {ejerciciosFiltrados?.map((ejercicio, index) => (
           <li key={index}>{ejercicio}</li>
-        ))}
+          ))}
       </ul>
         </div>
+          </section>
+
         </div>
     )
 }

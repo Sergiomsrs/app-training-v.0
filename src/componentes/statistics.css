@@ -56,4 +56,18 @@
   .sts-card li:hover {
     background-color: #f0f0f0;
   }
+
+
+
+  .sts-grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .statistics{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+  }
   
