@@ -26,18 +26,11 @@ export const LoginPage = ({handlerLogin}) => {
            window.alert('Error de validacion')
         }
 
-        // implementacion del login
-
         handlerLogin({username, password})
     
-    
-
         setLoginForm(initialLoginForm)
          
     }
-
-
-
 
     return (
         <aside className="login-page">

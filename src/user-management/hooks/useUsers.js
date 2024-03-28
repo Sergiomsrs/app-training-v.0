@@ -2,7 +2,7 @@ import { useReducer, useState } from "react"
 import { userReducer } from "../reducers/usersReducer"
 import { findAllPage, remove, save, update } from "../services/userService"
 import { useNavigate } from "react-router-dom"
-import { useAuth } from "./useAuth"
+import { useAuth } from "../../login/hooks/useAuth"
 
 
 const initialUsers = []

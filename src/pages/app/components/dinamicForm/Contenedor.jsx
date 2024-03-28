@@ -2,7 +2,7 @@
 
 
 import { useContext } from "react";
-import { FormContext } from "../context/FormContext";
+import { FormContext } from "../../../../context/FormContext";
 import Block from "./Block"
 import './dinamic.css'
 //import { movimientosPermitidos } from "../data/mov";

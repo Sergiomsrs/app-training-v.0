@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { useNavigate } from 'react-router-dom';
-import './css/WodCard.css'
-import { FormContext } from './context/FormContext';
+import '../../../../css/WodCard.css'
+import { FormContext } from '../../../../context/FormContext';
 import { useContext, useState } from 'react';
 
 

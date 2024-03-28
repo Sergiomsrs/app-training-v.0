@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import '../css/wodselectedlist.css';
-import { NewWodCard } from '../NewWodcard';
-import { buscarMov, movList } from '../funcion';
+import '../../css/Buscador.css';
+import { NewWodCard } from './components/diario/NewWodcard';
+import { buscarMov, movList } from '../statistics/funcion';
 
-export const WodSelectedList = () => {
+ export const Buscador = () => {
   const [userData, setUserData] = useState([]);
   const [answer, setAnswer] = useState('');
   const [answerDef, setAnswerDef] = useState('');

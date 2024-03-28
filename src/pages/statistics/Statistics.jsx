@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import './statistics.css'
-import {  mostRepMov,movList,numeroRegistros } from '../funcion';
+import '../../css/statistics.css'
+import {  mostRepMov,movList,numeroRegistros } from './funcion';
 
 export const Statistics = () => {
 

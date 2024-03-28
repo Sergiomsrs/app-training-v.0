@@ -1,9 +1,12 @@
 import { useContext } from 'react'
-import '../css/App.css'
-import { WodList } from '../WodList';
-import { Revisar } from '../Revisar';
-import { Contenedor } from '../dinamicForm/Contenedor';
-import { FormContext } from '../context/FormContext';
+import '../../css/App.css'
+
+import { Revisar } from './components/revisar/Revisar';
+
+import { FormContext } from '../../context/FormContext';
+import { WodList } from './components/diario/WodList';
+import { Contenedor } from './components/dinamicForm/Contenedor';
+
 
 function App() {
 

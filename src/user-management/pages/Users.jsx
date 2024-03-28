@@ -1,5 +1,5 @@
-import { UserForm } from "./UserForm"
-import { UserList } from "./UserList"
+import { UserForm } from "../components/UserForm"
+import { UserList } from "../components/UserList"
 import '../styles/userpage.css'
 import { useUsers } from "../hooks/useUsers"
 

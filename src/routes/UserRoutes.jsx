@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Navbar } from "../layout/Navbar"
-import App from "../layout/App"
-import { Blog } from "../componentes/Blog"
+
+import { Blog } from "../pages/Blog"
 import { FormProvider } from "../context/FormProvider"
-import { ContenedorEditar } from "../dinamicForm/ContenedorEditar"
-import { Statistics } from "../componentes/Statistics"
+import { ContenedorEditar } from "../pages/ContenedorEditar"
+import { Statistics } from "../pages/statistics/Statistics"
 import { Footer } from "../layout/Footer"
-import { WodSelectedList } from "../componentes/WodSelectedList"
+
 import { Users } from "../user-management/pages/Users"
+import App from "../pages/app/App"
+import { Buscador } from "../pages/app/Buscador"
 
 
 export const UserRoutes = ({ handlerLogout, login }) => {
@@ -27,7 +29,7 @@ export const UserRoutes = ({ handlerLogout, login }) => {
                 <Route path="/Blog" element={<Blog />} />
                 <Route path="/editar" element={<ContenedorEditar />} />
                 <Route path="/data" element={<Statistics />} />
-                <Route path="/buscador" element={<WodSelectedList />} />
+                <Route path="/buscador" element={<Buscador />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/users/page/:page" element={<Users />} />
               </>

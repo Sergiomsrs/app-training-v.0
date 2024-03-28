@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import { FormContext } from "./context/FormContext";
+import { FormContext } from "../../../../context/FormContext";
 import { RevisarCard } from "./RevisarCard";
 
 // traer la logica desde newWodCard

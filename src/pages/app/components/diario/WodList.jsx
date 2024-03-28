@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 
 import { useContext, useEffect } from 'react';
-import './css/WodCardScaled.css'
+import '../../../../css/WodCardScaled.css'
 import { NewWodCard } from './NewWodcard';
-import { FormContext } from './context/FormContext';
-import { NewWodCardScaled } from './componentes/NewWodcardScaled';
+import { FormContext } from '../../../../context/FormContext';
+import { NewWodCardScaled } from '../dinamicForm/NewWodcardScaled';
 
 export const WodList = () => {
 

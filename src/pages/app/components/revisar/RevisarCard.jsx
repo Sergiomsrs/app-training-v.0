@@ -1,6 +1,6 @@
-import './css/WodCard.css'
+import '../../../../css/WodCard.css'
 import { useContext } from 'react';
-import { FormContext } from './context/FormContext';
+import { FormContext } from '../../../../context/FormContext';
 
 
 

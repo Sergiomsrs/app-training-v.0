@@ -1,7 +1,7 @@
 
-import { UsersApp } from "../../layout/UsersApp"
-import { LoginPage } from "../../login/LoginPage"
-import { useAuth } from "../hooks/useAuth"
+import { UsersApp } from "./UsersApp"
+import { LoginPage } from "../login/LoginPage"
+import { useAuth } from "../login/hooks/useAuth"
 import { Navigate, Route, Routes } from "react-router-dom"
 
 

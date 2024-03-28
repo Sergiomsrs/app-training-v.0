@@ -1,4 +1,4 @@
-import './blog.css'
+import '../css/blog.css'
 
 export const Blog = () => {
     return (
@@ -42,7 +42,7 @@ export const Blog = () => {
                         <a href="#">Leer más</a>
                     </article>
 
-                    {/* Puedes agregar más artículos según sea necesario */}
+                  
                 </div>
 
 

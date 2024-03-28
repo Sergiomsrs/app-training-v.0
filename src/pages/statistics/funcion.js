@@ -1,4 +1,4 @@
-import {movimientosPermitidos} from "../src/data/mov"
+import {movimientosPermitidos} from "../../data/mov"
 
 export const ultimoID = async () => {
     try {
@@ -6,7 +6,6 @@ export const ultimoID = async () => {
         const data = await response.json();
         
         // Manejar la respuesta JSON, por ejemplo, imprimir el resultado
-        console.log(data);
         
         return data; // Puedes retornar data o realizar otras operaciones según tus necesidades
     } catch (error) {
@@ -22,7 +21,6 @@ export const numeroRegistros = async () => {
         const data = await response.json();
         
         // Manejar la respuesta JSON, por ejemplo, imprimir el resultado
-        console.log(data);
         
         return data; // Puedes retornar data o realizar otras operaciones según tus necesidades
     } catch (error) {
@@ -37,7 +35,6 @@ export const mostRepMov = async () => {
         const data = await response.text();
         
         // Manejar la respuesta JSON, por ejemplo, imprimir el resultado
-        console.log(data);
         
         return data; // Puedes retornar data o realizar otras operaciones según tus necesidades
     } catch (error) {

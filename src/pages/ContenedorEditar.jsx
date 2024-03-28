@@ -2,10 +2,11 @@
 
 
 import { useContext } from "react";
-import Block from "./Block"
-import './dinamic.css'
+
+import '../pages/app/components/dinamicForm/dinamic.css'
 import { FormContext } from "../context/FormContext";
 import { useNavigate } from "react-router-dom";
+import Block from "./app/components/dinamicForm/Block";
 
 
 export const ContenedorEditar = () => {

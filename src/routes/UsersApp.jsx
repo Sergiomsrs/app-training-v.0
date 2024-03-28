@@ -1,7 +1,7 @@
 
 
 import { Route, Routes } from "react-router"
-import { UserRoutes } from "../routes/UserRoutes"
+import { UserRoutes } from "./UserRoutes"
 
 export const UsersApp = ({handlerLogout, login}) => {
 

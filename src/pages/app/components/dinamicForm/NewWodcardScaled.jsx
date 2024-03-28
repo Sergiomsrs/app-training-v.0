@@ -1,4 +1,4 @@
-import '../css/WodCardScaled.css'
+import '../../../../css/WodCardScaled.css'
 
 export function NewWodCardScaled({data}) {
   
