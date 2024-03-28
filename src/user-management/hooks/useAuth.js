@@ -1,6 +1,5 @@
 import { useReducer } from "react"
 
-import Swal from "sweetalert2"
 import { loginReducer } from "../reducers/loginReducer"
 import { loginUser } from "../services/authService"
 import { useNavigate } from "react-router-dom"
@@ -45,9 +44,9 @@ export const useAuth = () => {
             
         } catch (error) {
             if(error.response.status === 401){
-                Swal.fire('Error de validacion', 'Username o password incorrectos', 'error')
+                window.confirm('Error de validacion')
             } else if (error.response.status === 403) {
-                Swal.fire('Error de Login', 'No tiene acceso al recurso', 'error')
+                window.confirm('Error de Login')
             } else {
                 throw error
         }

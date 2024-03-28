@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
+
 
 import { Link } from "react-router-dom"
+import '../css/navbar.css'
 
 export const Navbar = ({handlerLogout, login}) => {
   return (

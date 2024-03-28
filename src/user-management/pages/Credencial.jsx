@@ -1,5 +1,6 @@
-import { LoginPage } from "../auth/LoginPage"
+
 import { UsersApp } from "../../layout/UsersApp"
+import { LoginPage } from "../../login/LoginPage"
 import { useAuth } from "../hooks/useAuth"
 import { Navigate, Route, Routes } from "react-router-dom"
 

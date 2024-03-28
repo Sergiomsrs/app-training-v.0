@@ -151,49 +151,7 @@ button{
 }
 
 
-.navbar {
-  color: #fff; /* Color del texto */
-  display: flex;
-  justify-content: space-between; /* Distribuye los elementos a los extremos */
-  align-items: center; /* Centra verticalmente los elementos */
-  background-color: rgb(24, 24, 24);
-  height: 3rem;
-  padding-left: 20px;
-  padding-right: 20px;
-  
-}
 
-.navbar-brand {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color:  rgb(38, 38, 204);;
-}
-
-.navbar-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.user-title{
-  text-transform: capitalize;
-}
 
 .wodcard-container{
   display: flex;
@@ -203,16 +161,6 @@ button{
   gap: 1rem;
 }
 
-.footer-principal{
-  width: 100%;
-  color: #fff; /* Color del texto */
-  display: flex;
-  justify-content: space-evenly; /* Distribuye los elementos a los extremos */
-  align-items: center; /* Centra verticalmente los elementos */
-  background-color: rgb(24, 24, 24);
-  margin-top: auto;
-  height: 2rem;
-}
 
 
 

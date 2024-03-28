@@ -1,5 +1,4 @@
 import { useReducer, useState } from "react"
-import Swal from "sweetalert2"
 import { userReducer } from "../reducers/usersReducer"
 import { findAllPage, remove, save, update } from "../services/userService"
 import { useNavigate } from "react-router-dom"
@@ -61,7 +60,7 @@ export const useUsers = () => {
                 payload: response.data,
             });
 
-            Swal.fire(
+            window.alert(
                 (user.id === 0) ?
                     'Usuario Creado' :
                     'Usuario Actualizado',
@@ -98,43 +97,24 @@ export const useUsers = () => {
 
     }
 
-    const handlerDeleteUser = (id) => {
-
-        Swal.fire({
-            title: "Estas seguro que quieres eliminar el usuario?",
-            text: "El usuario se eliminara de forma definitiva",
-            icon: "warning",
-            background: "#3a3838",
-            color: "#fff",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, eliminar!"
-        }).then( async (result) => {
-            if (result.isConfirmed) {
-                try {
-                    await remove(id);
-        
-                    dispatch({
-                        type: 'DELETE_USER',
-                        payload: id
-                    });
-                    Swal.fire({
-                        title: "Eliminado!",
-                        text: "El usuario ha sido eliminado con exito.",
-                        icon: "success",
-                        background: "#3a3838",
-                        color: "#fff"
-                    });
-                } catch (error) {
-                    if (error.response?.status == 401) {
-                        handlerLogout();
-                    } 
+    
+    const handlerDeleteUser = async (id) => {
+        const confirmed = await window.confirm("Deseas eliminar el usuario");
+        if (confirmed) {
+            try {
+                await remove(id);
+                dispatch({
+                    type: 'DELETE_USER',
+                    payload: id
+                });
+                window.confirm("Usuario eliminado exitosamente");
+            } catch (error) {
+                if (error.response?.status === 401) {
+                    handlerLogout();
                 }
             }
-        });
-
-    }
+        }
+    };
 
     const handlerUpdateUser = (user) => {
         setErrors(initialerrors)

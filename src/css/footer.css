@@ -1,0 +1,11 @@
+.footer-principal{
+    width: 100%;
+    color: #fff; /* Color del texto */
+    display: flex;
+    justify-content: space-evenly; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: rgb(24, 24, 24);
+    margin-top: auto;
+    height: 2rem;
+  }
+  

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
 
 const initialLoginForm = {
     username: '',
@@ -24,7 +23,7 @@ export const LoginPage = ({handlerLogin}) => {
     const onSubmit = (event) => {
         event.preventDefault()
         if(!username || !password){
-            Swal.fire('Error de validacion', 'Username y password requeridos', 'error')
+           window.alert('Error de validacion')
         }
 
         // implementacion del login
