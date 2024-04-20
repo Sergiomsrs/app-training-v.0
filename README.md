@@ -1,3 +1,36 @@
 # App Training
 
-App Training es una app elaborada por Sergiomsrs, que utiliza algunos bloques de código pertenecientes a los diferentes cursos de formación realizados en los últimos años, con el objetivo de aplicar los conocimientos adquiridos más allá de los entornos de prueba de los propios cursos.
+Proyecto en actual desarrollo que permite la creación y gestión de entrenamientos y usuarios.
+Todo el frontend está construido en React y Javascript integrando el desarrollo de dos API Rest que gestionan de forma independiente los usuarios y los entrenamientos.
+Ambas están diseñadas con Spring Boot, implementando MySQL, Spring Security y JWT para la autenticación de usuarios, y Spring Boot con MongoDB para la gestión de entrenamientos.
+
+# Aplicación Completa de Gestión de Entrenamientos
+Desde la aplicación, se puede llevar a cabo una gestión completa tanto de los entrenamientos como de los usuarios, abarcando la creación, edición y persistencia de los mismos en la base de datos.
+
+# Inicio de sesión con autenticación mediante JWT
+El acceso a la aplicación está controlado mediante una API Rest creada con Spring Security y JWT. Sus controladores permiten el acceso a los usuarios y restringen sus posibilidades en función de su rol dentro de la aplicación.
+
+# Gestión de Usuarios
+Desde el panel de administración, es posible gestionar los usuarios de la aplicación.
+
+# Proceso de elaboración de entrenamientos
+La creación de entrenamientos se divide en tres etapas: la creación a través de un formulario, una revisión general con el envío a la base de datos, y la visualización general de los entrenamientos registrados.
+
+# Formulario de creación de entrenamientos
+Formulario específicamente diseñado para esta aplicación. Construido en React, permite añadir tantos bloques y ejercicios como se deseen, ofreciendo una flexibilidad óptima en la creación de entrenamientos personalizados. Este diseño facilita el análisis posterior de los datos recopilados, proporcionando una visión detallada de cada componente del entrenamiento.
+
+# Sección Buscador
+La aplicación cuenta con una sección que permite buscar entrenamientos mediante palabras clave.
+
+# Análisis de datos
+Sección en desarrollo para analizar los datos de los entrenamientos registrados. Todos los entrenamientos son enviados a una API Rest, que los almacena en una base de datos MongoDB. Esto nos permite realizar un análisis estadístico de los registros, obteniendo insights valiosos para mejorar la efectividad y personalización de los entrenamientos ofrecidos.
+
+# Futuras implementaciones
+La aplicación está en constante desarrollo y se irán añadiendo nuevas funcionalidades para mejorar la experiencia del usuario y la eficacia del sistema. Algunas de las próximas implementaciones incluyen:
+
+Asignar entrenamientos a su fecha de ejecución.
+Asignar entrenamientos a plan de entrenamiento.
+Asignar plan de entrenamiento a usuario.
+Implementar vista de entrenamientos asignados a usuario.
+Implementar vista de entrenamientos a ejecutar en rango de fechas.
+Implementar sección estadísticas por usuario.
