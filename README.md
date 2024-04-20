@@ -4,6 +4,8 @@ Proyecto en actual desarrollo que permite la creación y gestión de entrenamien
 Todo el frontend está construido en React y Javascript integrando el desarrollo de dos API Rest que gestionan de forma independiente los usuarios y los entrenamientos.
 Ambas están diseñadas con Spring Boot, implementando MySQL, Spring Security y JWT para la autenticación de usuarios, y Spring Boot con MongoDB para la gestión de entrenamientos.
 
+![Mi Imagen](/PhotoDemoApp/general2.webp)
+
 # Aplicación Completa de Gestión de Entrenamientos
 Desde la aplicación, se puede llevar a cabo una gestión completa tanto de los entrenamientos como de los usuarios, abarcando la creación, edición y persistencia de los mismos en la base de datos.
 
