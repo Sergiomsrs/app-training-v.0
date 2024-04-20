@@ -43,6 +43,7 @@ Sección en desarrollo para analizar los datos de los entrenamientos registrados
 La aplicación está en constante desarrollo y se irán añadiendo nuevas funcionalidades para mejorar la experiencia del usuario y la eficacia del sistema. Algunas de las próximas implementaciones incluyen:
 
 ![Asignar entrenamientos a su fecha de ejecución.](https://img.shields.io/badge/APLICACIÓN%20DE%20GESTIÓN%20DE%20ENTRENAMIENTOS%20CON%20CONTROL%20DE%20USUARIOS-2d259c)
+
 ![Asignar entrenamientos a plan de entrenamiento.](https://img.shields.io/badge/APLICACIÓN%20DE%20GESTIÓN%20DE%20ENTRENAMIENTOS%20CON%20CONTROL%20DE%20USUARIOS-2d259c)
 
 
