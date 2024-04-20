@@ -44,12 +44,15 @@ La aplicación está en constante desarrollo y se irán añadiendo nuevas funcio
 
 ![Asignar entrenamientos a su fecha de ejecución.](https://img.shields.io/badge/Asignar%20entrenamientos%20a%20su%20fecha%20de%20ejecución-2d259c)
 
-![Asignar entrenamientos a plan de entrenamiento.](https://img.shields.io/badge/APLICACIÓN%20DE%20GESTIÓN%20DE%20ENTRENAMIENTOS%20CON%20CONTROL%20DE%20USUARIOS-2d259c)
+![Asignar entrenamientos a plan de entrenamiento.](https://img.shields.io/badge/Asignar%20entrenamientos%20a%20plan%20de%20entrenamiento-2d259c)
+
+![Asignar plan de entrenamiento a usuario.](https://img.shields.io/badge/Asignar%20plan%20de%20entrenamiento%20a%20usuario.-2d259c)
+
+![Implementar vista de entrenamientos asignados a usuario.](https://img.shields.io/badge/Implementar%20vista%20de%20entrenamientos%20asignados%20a%20usuario.-2d259c)
+
+![Implementar vista de entrenamientos a ejecutar en rango de fechas.](https://img.shields.io/badge/Implementar%20vista%20de%20entrenamientos%20a%20ejecutar%20en%20rango%20de%20fechas.-2d259c)
+
+![Implementar sección estadísticas por usuario.](https://img.shields.io/badge/Implementar%20sección%20estadísticas%20por%20usuario.-2d259c)
 
 
 
-Asignar entrenamientos a plan de entrenamiento.
-Asignar plan de entrenamiento a usuario.
-Implementar vista de entrenamientos asignados a usuario.
-Implementar vista de entrenamientos a ejecutar en rango de fechas.
-Implementar sección estadísticas por usuario.
