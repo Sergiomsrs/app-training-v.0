@@ -13,8 +13,10 @@ export const Credencial = () => {
 
     return (
 
+            <div>
         <Routes>
             {
+
                 login.isAuth ? (
                     <Route path="/*" element={<UsersApp handlerLogout={handlerLogout} login={login} />} />
                 )
@@ -27,6 +29,7 @@ export const Credencial = () => {
             }
 
         </Routes>
+                </div>
 
     )
 }
