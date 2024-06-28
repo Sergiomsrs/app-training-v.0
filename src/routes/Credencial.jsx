@@ -13,7 +13,8 @@ export const Credencial = () => {
 
     return (
 
-            <div>
+        <div className="bg-customDark text-gray-900 min-h-screen">
+        <div className="container mx-auto px-16 max-w-full py-8" >
         <Routes>
             {
 
@@ -29,6 +30,7 @@ export const Credencial = () => {
             }
 
         </Routes>
+                </div>
                 </div>
 
     )

@@ -1,6 +1,6 @@
 
 import { useContext, useEffect } from 'react';
-import '../../../../css/WodCardScaled.css'
+
 import { NewWodCard } from './NewWodcard';
 import { FormContext } from '../../../../context/FormContext';
 import { NewWodCardScaled } from '../dinamicForm/NewWodcardScaled';
