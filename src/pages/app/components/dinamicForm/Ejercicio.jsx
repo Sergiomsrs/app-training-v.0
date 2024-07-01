@@ -1,4 +1,4 @@
-export const Ejercicio = ({ handleInputChange, values,handleKeyPress }) => {
+export const Ejercicio = ({ handleInputChange, values, handleKeyPress }) => {
     const { rep = "", mov = "" } = values; 
     
   

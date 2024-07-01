@@ -6,7 +6,7 @@ export const FormProvider = ({ children }) => {
   
 
   const [rev, setRev] = useState([])
-  const [apps, setApps] = useState([{ ejercicios: [], id: 1, title: "", desc: "" }]);
+  const [apps, setApps] = useState([{ ejercicios: [], id: 1, title: "", desc: "", tipo:"" }]);
   const [selector, setSelector] = useState(1)
   const [selectorClassCrear, setSelectorClassCrear] = useState('white')
   const [selectorClassRevisar, setSelectorClassRevisar] = useState('blue')
