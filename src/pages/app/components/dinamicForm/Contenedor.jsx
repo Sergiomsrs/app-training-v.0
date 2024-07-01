@@ -17,9 +17,6 @@ export const Contenedor = () => {
         handleResetForm,
         handleClick,
         handleAddApp,
-        handleTitleChange,
-        handleDescChange,
-        handleTipoChange,
         handleDeleteRow,
         handleDeleteBlock,
         handleHeaderChange
@@ -37,12 +34,11 @@ export const Contenedor = () => {
             handleInputChange={(e, index) => handleInputChange(e, app.id, index)} 
             handleClick={() => handleClick(app.id)} 
             handleDeleteRow={(index) => handleDeleteRow(app.id, index)}
-            onTitleChange={(e) => handleTitleChange(e, app.id)}
-            onDescChange={(e) => handleDescChange(e, app.id)}
             title={app.title} 
             desc={app.desc} 
             handleTipoChange={(e) => handleTipoChange(e, app.id)}
             tipo={app.tipo}
+            handleHeaderChange={(e) => handleHeaderChange(e, app.id)}
             />
           </div>
         ))}

@@ -7,12 +7,14 @@ import '../pages/app/components/dinamicForm/dinamic.css'
 import { FormContext } from "../context/FormContext";
 import { useNavigate } from "react-router-dom";
 import Block from "./app/components/dinamicForm/Block";
+import { useDimanicForm } from "./app/components/dinamicForm/Hooks/useDinamicForm";
 
 
 export const ContenedorEditar = () => {
 
   const { apps, setApps, idEdit, setSelector } = useContext(FormContext)
   const navigate = useNavigate();
+  const { handleHeaderChange } = useDimanicForm()
 
   const enviarDatos = () => {
 
@@ -118,8 +120,7 @@ export const ContenedorEditar = () => {
               handleInputChange={(e, index) => handleInputChange(e, app.id, index)}
               handleClick={() => handleClick(app.id)}
               handleDeleteRow={(index) => handleDeleteRow(app.id, index)}
-              onTitleChange={(e) => handleTitleChange(e, app.id)}
-              onDescChange={(e) => handleDescChange(e, app.id)}
+              handleHeaderChange={(e) => handleHeaderChange(e, app.id)}
               title={app.title}
               desc={app.desc}
             />

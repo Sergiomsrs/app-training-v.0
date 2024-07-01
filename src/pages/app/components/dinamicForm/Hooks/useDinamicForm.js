@@ -55,10 +55,18 @@ export const useDimanicForm = () => {
 
     const handleHeaderChange = (e, appId) => {
         const { name, value } = e.target;
-        const newApps = [...apps];
-        const appIndex = newApps.findIndex((app) => app.id === appId);
-        newApps[appIndex][name] = value;
-        setApps(newApps);
+  const newApps = [...apps];
+  const appIndex = newApps.findIndex((app) => app.id === appId);
+  
+  if (appIndex !== -1) {
+    newApps[appIndex] = {
+      ...newApps[appIndex],
+      [name]: value
+    };
+    setApps(newApps);
+  } else {
+    console.error(`App with id ${appId} not found`);
+  }
       };
 
     const handleResetForm = () => {
@@ -78,29 +86,6 @@ export const useDimanicForm = () => {
     };
 
 
-    const handleTitleChange = (e, appId) => {
-        const { value } = e.target;
-        const newApps = [...apps];
-        const appIndex = newApps.findIndex((app) => app.id === appId);
-        newApps[appIndex].title = value;
-        setApps(newApps);
-    };
-
-    const handleDescChange = (e, appId) => {
-        const { value } = e.target;
-        const newApps = [...apps];
-        const appIndex = newApps.findIndex((app) => app.id === appId);
-        newApps[appIndex].desc = value;
-        setApps(newApps);
-    };
-    const handleTipoChange = (e, appId) => {
-        const { value } = e.target;
-        const newApps = [...apps];
-        const appIndex = newApps.findIndex((app) => app.id === appId);
-        newApps[appIndex].tipo = value;
-        setApps(newApps);
-    };
-
     const handleDeleteRow = (appId, index) => {
         const newApps = [...apps];
         const BlockIndex = newApps.findIndex(app => app.id === appId);
@@ -116,10 +101,6 @@ export const useDimanicForm = () => {
 
     }
 
-
-
-
-
     return {
         apps,
         enviarDatos,
@@ -127,16 +108,8 @@ export const useDimanicForm = () => {
         handleResetForm,
         handleClick,
         handleAddApp,
-        handleTitleChange,
-        handleDescChange,
-        handleTipoChange,
         handleDeleteRow,
         handleDeleteBlock,
         handleHeaderChange
-
-
-
-
-
     }
 }

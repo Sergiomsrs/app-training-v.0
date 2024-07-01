@@ -6,12 +6,10 @@ function Block({
   handleInputChange,
   handleClick,
   title,
-  onTitleChange,
   desc,
-  onDescChange,
   handleDeleteRow,
   tipo,
-  handleTipoChange
+  handleHeaderChange
 }) {
   // Estado local para retener los valores de rep y mov
   const [ejercicioValues, setEjercicioValues] = useState([]);
@@ -31,7 +29,9 @@ function Block({
     handleInputChange(e, index);
   };
   const handleKeyPress = (e) => {
+    // Verificar si la tecla presionada es el signo más (+)
     if (e.key === 'Enter') {
+      // Llamar a la función o realizar la acción que deseas cuando se presiona el signo más
       handleClick();
     }
   };
@@ -43,21 +43,24 @@ function Block({
           className="head-form-input"
           type="text"
           value={title}
-          onChange={onTitleChange}
+          name="title"
+          onChange={handleHeaderChange}
           placeholder="Título"
         />
         <input
           className="head-form-input"
           type="text"
           value={desc}
-          onChange={onDescChange}
+          name="desc"
+          onChange={handleHeaderChange}
           placeholder="Descripcion"
         />
         <input
           className="head-form-input"
           type="text"
           value={tipo}
-          onChange={handleTipoChange}
+          name="tipo"
+          onChange={handleHeaderChange}
           placeholder="Tipo"
         />
       </div>
